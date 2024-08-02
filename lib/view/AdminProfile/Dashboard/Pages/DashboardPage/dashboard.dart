@@ -147,7 +147,7 @@ class _SliderView extends StatelessWidget {
               title: 'Loan Plans',
               items: [
                 _buildListTile(
-                    context, 'Emi Plans Of Customer', '/emiplanspage'),
+                    context, 'Emi Plans Of Customer', '/emiplansofcustomer'),
                 _buildListTile(
                     context, 'Emi Collected Till Date', '/emicollectedpage'),
                 _buildListTile(

@@ -16,32 +16,39 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: ColorConstant.land,
+          title: Text(
+            'Forgot Password',
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  IconButton(
-                    icon: Icon(Icons.arrow_back),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/login');
-                    },
-                  ),
-                  Text(
-                    '  Forgot Password',
-                    style: TextStyle(
-                        color: ColorConstant.black,
-                        fontFamily: 'Montserrat',
-                        fontWeight: FontWeight.normal,
-                        fontSize: 22),
-                  )
-                ],
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.all(8.0),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.start,
+            //     children: [
+            //       IconButton(
+            //         icon: Icon(Icons.arrow_back),
+            //         onPressed: () {
+            //           Navigator.pushNamed(context, '/login');
+            //         },
+            //       ),
+            //       Text(
+            //         '  Forgot Password',
+            //         style: TextStyle(
+            //             color: ColorConstant.black,
+            //             fontFamily: 'Montserrat',
+            //             fontWeight: FontWeight.normal,
+            //             fontSize: 22),
+            //       )
+            //     ],
+            //   ),
+            // ),
             Container(
               height: displayHeight(context) * 0.001,
               color: ColorConstant.grey,

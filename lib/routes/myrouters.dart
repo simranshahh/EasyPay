@@ -19,6 +19,7 @@ import 'package:easypay/view/AdminProfile/Dashboard/Pages/Master/Series/seriespa
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/UserManagement/Employee/employeepage.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/UserManagement/Member/memberpage.dart';
 import 'package:easypay/view/Auth/Fogetpassword/pages/forgetpassword.dart';
+import 'package:easypay/view/Auth/Fogetpassword/pages/newpwset.dart';
 import 'package:easypay/view/Auth/Fogetpassword/pages/otp.dart';
 import 'package:easypay/view/Auth/Login/pages/loginn.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/DashboardPage/dashboard.dart';
@@ -51,6 +52,9 @@ class MyRoutes {
 
       case '/otp':
         return MaterialPageRoute(builder: (context) => OtpInputPage());
+
+      case '/setnewpasswordpage':
+        return MaterialPageRoute(builder: (context) => SetNewPasswordPage());
       case '/dashhomepage':
         return MaterialPageRoute(builder: (context) => DashHomePage());
       case '/memberprofilepage':
@@ -105,7 +109,7 @@ class MyRoutes {
       case '/loancalculatorpage':
         return MaterialPageRoute(builder: (context) => LoanCalculatorPage());
       case '/emiplansofcustomer':
-        return MaterialPageRoute(builder: (context) => Emiplansofcustomer());
+        return MaterialPageRoute(builder: (context) => LoanPlansPage());
       case '/emimcollectedtilldate':
         return MaterialPageRoute(builder: (context) => EmiCollectedTillDate());
       default:

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, avoid_print, prefer_const_constructors_in_immutables, prefer_typing_uninitialized_variables, must_be_immutable, prefer_final_fields, unused_field, deprecated_member_use
 
 import 'package:easypay/utils/color_constants.dart';
+import 'package:easypay/view/Auth/Fogetpassword/pages/newpwset.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:async';
@@ -51,7 +52,7 @@ class _OtpInputPageState extends State<OtpInputPage> {
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: ColorConstant.primary,
+        backgroundColor: ColorConstant.land,
         body: Padding(
           padding: EdgeInsets.only(left: 20.42, top: 12.41, right: 20.42),
           child: Column(
@@ -112,10 +113,18 @@ class _OtpInputPageState extends State<OtpInputPage> {
                   width: 150,
                   height: 40,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  SetNewPasswordPage()));
+                    },
                     style: ButtonStyle(
+                      foregroundColor:
+                          MaterialStatePropertyAll(ColorConstant.white),
                       overlayColor:
-                          MaterialStatePropertyAll(ColorConstant.primarydark),
+                          MaterialStatePropertyAll(ColorConstant.land),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.0),
@@ -130,7 +139,7 @@ class _OtpInputPageState extends State<OtpInputPage> {
                         'Verify OTP',
                         style: TextStyle(
                             fontSize: 16,
-                            color: ColorConstant.bluesub,
+                            color: ColorConstant.white,
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.w600),
                       ),
@@ -172,8 +181,7 @@ class OtpInput extends StatelessWidget {
                 borderSide: BorderSide(color: ColorConstant.white)),
             border: const OutlineInputBorder(),
             counterText: '',
-            hintStyle:
-                 TextStyle(color: ColorConstant.black, fontSize: 20.0)),
+            hintStyle: TextStyle(color: ColorConstant.black, fontSize: 20.0)),
         onChanged: (value) {
 //           if (value.length == 1) {
 //             FocusScope.of(context).nextFocus();
