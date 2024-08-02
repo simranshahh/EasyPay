@@ -112,8 +112,8 @@ class _UserProfileState extends State<UserProfile> {
                                 height: displayHeight(context) * 0.02,
                               ),
                               SizedBox(
-                                width: 130,
-                                height: 30,
+                                width: 140,
+                                height: 40,
                                 child: TextButton(
                                   onPressed: () {
                                     // Navigator.pushNamed(
@@ -146,7 +146,7 @@ class _UserProfileState extends State<UserProfile> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 268.0),
+            padding: const EdgeInsets.only(top: 278.0),
             child: Container(
               height: 1,
               width: displayWidth(context),

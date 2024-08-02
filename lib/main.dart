@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       // create: (context) => LoginBloc(),
       child: MaterialApp(
         onGenerateRoute: MyRoutes.generatedRoutes,
-        initialRoute: '/emiplansofcustomer',
+        initialRoute: '/splash',
       ),
     );
   }

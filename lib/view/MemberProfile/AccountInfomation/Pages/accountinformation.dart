@@ -2,6 +2,7 @@
 
 import 'package:easypay/utils/color_constants.dart';
 import 'package:easypay/utils/size_config.dart';
+import 'package:easypay/view/Auth/Login/pages/loginn.dart';
 import 'package:flutter/material.dart';
 
 class AccountInformationPage extends StatefulWidget {

@@ -96,8 +96,7 @@ class _AddSeriesDataState extends State<AddSeriesData> {
                                 style: TextStyle(
                                   fontSize: 12,
                                   color: ColorConstant.primary,
-                    fontFamily: 'Montserrat',
-
+                                  fontFamily: 'Montserrat',
                                   fontWeight: FontWeight.w600,
                                 ),
                                 onChanged: (value) {
@@ -121,8 +120,7 @@ class _AddSeriesDataState extends State<AddSeriesData> {
                                   fillColor: ColorConstant.grey,
                                   // hintText: "Your Title",
                                   hintStyle: TextStyle(
-                    fontFamily: 'Montserrat',
-
+                                    fontFamily: 'Montserrat',
                                     color: ColorConstant.grey,
                                     fontSize: 12,
                                     fontWeight: FontWeight.w400,
@@ -146,10 +144,12 @@ class _AddSeriesDataState extends State<AddSeriesData> {
                           children: [
                             Text(
                               'Member Series',
-                              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: 'Montserrat',
-
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    fontFamily: 'Montserrat',
+                                  ),
                             ),
 
                             SizedBox(
@@ -186,8 +186,7 @@ class _AddSeriesDataState extends State<AddSeriesData> {
                                   // hintText: "Your Title",
                                   hintStyle: TextStyle(
                                     color: ColorConstant.grey,
-                    fontFamily: 'Montserrat',
-
+                                    fontFamily: 'Montserrat',
                                     fontSize: 12,
                                     fontWeight: FontWeight.w400,
                                   ),
@@ -210,10 +209,12 @@ class _AddSeriesDataState extends State<AddSeriesData> {
                           children: [
                             Text(
                               'Include Branch code',
-                              style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: 'Montserrat',
-
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge!
+                                  .copyWith(
+                                    fontFamily: 'Montserrat',
+                                  ),
                             ),
 
                             SizedBox(

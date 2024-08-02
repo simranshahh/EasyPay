@@ -30,6 +30,7 @@ class _AddRolesDataState extends State<AddRolesData> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: ColorConstant.white,
         body: Padding(
           padding: const EdgeInsets.all(10.0),
           child: SingleChildScrollView(
@@ -39,7 +40,9 @@ class _AddRolesDataState extends State<AddRolesData> {
               children: [
                 Text(
                   'Add Image',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                     fontFamily: 'Montserrat',
                   ),
                 ),
@@ -183,16 +186,14 @@ class _AddRolesDataState extends State<AddRolesData> {
                       fillColor: ColorConstant.grey,
                       hintText: "Sub Title",
                       hintStyle: TextStyle(
-                    fontFamily: 'Montserrat',
-
+                        fontFamily: 'Montserrat',
                         color: ColorConstant.grey,
                         fontSize: 20,
                         fontWeight: FontWeight.w400,
                       ),
                       labelText: 'Sub Title',
                       labelStyle: TextStyle(
-                    fontFamily: 'Montserrat',
-
+                        fontFamily: 'Montserrat',
                         color: ColorConstant.grey,
                         fontSize: 20,
                         fontWeight: FontWeight.w400,

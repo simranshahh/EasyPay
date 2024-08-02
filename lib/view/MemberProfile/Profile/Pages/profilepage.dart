@@ -84,7 +84,7 @@ class _MemberProfilePageState extends State<MemberProfilePage> {
                         ),
                         SizedBox(
                           width: 130,
-                          height: 30,
+                          height: 40,
                           child: TextButton(
                             onPressed: () {
                               // Navigator.pushNamed(
