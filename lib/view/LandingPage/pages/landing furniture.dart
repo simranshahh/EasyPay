@@ -1,128 +1,150 @@
-// ignore_for_file: prefer_const_constructors, file_names, unused_import
+// ignore_for_file: prefer_const_constructors, file_names, unused_import, prefer_const_literals_to_create_immutables
 
 import 'package:easypay/utils/color_constants.dart';
 import 'package:easypay/utils/size_config.dart';
-import 'package:easypay/view/LandingPage/pages/electronicstabbar.dart';
 import 'package:easypay/view/LandingPage/pages/furnituretabbar.dart';
 import 'package:flutter/material.dart';
 
-class LandingFurniture extends StatefulWidget {
+class LandingFurniture extends StatelessWidget {
   const LandingFurniture({super.key});
 
-  @override
-  State<LandingFurniture> createState() => _LandingFurnitureState();
-}
-
-class _LandingFurnitureState extends State<LandingFurniture> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         resizeToAvoidBottomInset: true,
-        body: Stack(children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 14.0, vertical: 5),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Furniture Items',
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall!
-                      .copyWith(fontWeight: FontWeight.bold),
-                ),
-                IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
-              ],
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25, vertical: 60),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      height: displayHeight(context) * 0.09,
-                      width: displayWidth(context) * 0.75,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(
-                            Icons.search,
-                            color: Colors.grey, // Placeholder color
-                          ),
-                          hintText: 'Search',
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            borderSide: BorderSide.none,
-                          ),
-                          contentPadding: EdgeInsets.symmetric(vertical: 15),
+        appBar: AppBar(
+          // controller: controller,
+          title: Text("Furniture Items"),
+        ),
+        body: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          child: Column(
+            children: [
+              // Search and Filter Row
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.search, color: Colors.grey),
+                        hintText: 'Search',
+                        filled: true,
+                        fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: BorderSide.none,
                         ),
+                        contentPadding: EdgeInsets.symmetric(vertical: 15),
                       ),
                     ),
-                    Container(
-                      height: displayHeight(context) * 0.065,
-                      width: displayWidth(context) * 0.12,
-                      decoration: BoxDecoration(
-                          color: ColorConstant.land,
-                          borderRadius: BorderRadius.circular(12)),
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.sort_sharp,
-                            color: ColorConstant.white,
-                          )),
-                    )
-                  ],
-                ),
-                Container(
-                    width: displayWidth(context),
-                    height: displayHeight(context) * 0.25,
+                  ),
+                  SizedBox(width: 10),
+                  Container(
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        boxShadow: [
-                          BoxShadow(
-                            color: ColorConstant.grey,
-                          )
-                        ],
-                        color: Colors.white),
-                    child: Image.asset(
-                      'assets/baner.jpg',
-                      fit: BoxFit.fill,
-                    )),
-                SizedBox(
-                  height: displayHeight(context) * 0.02,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Categories',
-                      style: Theme.of(context).textTheme.bodyLarge,
+                      color: ColorConstant.land,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black12,
+                          blurRadius: 4,
+                          offset: Offset(2, 2),
+                        ),
+                      ],
                     ),
-                    Text(
-                      'See All',
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                          decoration: TextDecoration.underline,
-                          color: ColorConstant.land),
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.filter_list,
+                        color: ColorConstant.white,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+
+              // Banner Section
+              Container(
+                width: double.infinity,
+                height: displayHeight(context) * 0.25,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 8,
+                      offset: Offset(4, 4),
                     ),
                   ],
+                  image: DecorationImage(
+                    image: AssetImage('assets/baner.jpg'),
+                    fit: BoxFit.cover,
+                    colorFilter: ColorFilter.mode(
+                      Colors.black.withOpacity(0.3),
+                      BlendMode.darken,
+                    ),
+                  ),
                 ),
-                SizedBox(
-                  height: 10,
+                alignment: Alignment.center,
+                child: Text(
+                  'Exclusive Furniture\nUp to 50% Off!',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    shadows: [
+                      Shadow(
+                        blurRadius: 6,
+                        color: Colors.black26,
+                        offset: Offset(2, 2),
+                      ),
+                    ],
+                  ),
                 ),
-                Expanded(child: FurnitureTabBar())
-              ],
-            ),
+              ),
+              SizedBox(height: 20),
+
+              // Categories Header
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Categories',
+                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      // Add navigation or other logic for 'See All' here
+                    },
+                    child: Text(
+                      'See All',
+                      style:
+                          Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                decoration: TextDecoration.underline,
+                                color: ColorConstant.land,
+                                fontWeight: FontWeight.w500,
+                              ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+
+              // Furniture Tab Bar
+              Expanded(child: FurnitureTabBar()),
+            ],
           ),
-        ]),
+        ),
       ),
     );
   }
 }
+
+final controller = ScrollController();

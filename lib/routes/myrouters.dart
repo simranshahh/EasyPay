@@ -8,6 +8,8 @@ import 'package:easypay/view/AdminProfile/Dashboard/Pages/HomeManagement/Banner/
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/HomeManagement/Categories/categorypage.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/HomeManagement/Electronics/electronicspage.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/HomeManagement/Furnitures/furniturepage.dart';
+import 'package:easypay/view/AdminProfile/Dashboard/Pages/LoanPlans/emicollectedtilldate.dart';
+import 'package:easypay/view/AdminProfile/Dashboard/Pages/LoanPlans/emiplansofcustomer.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/LoanPlans/loancalculator.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/Master/Branches/branchespage.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/Master/EmployeeRoles/employeerolespage.dart';
@@ -102,6 +104,10 @@ class MyRoutes {
         return MaterialPageRoute(builder: (context) => Onboarding());
       case '/loancalculatorpage':
         return MaterialPageRoute(builder: (context) => LoanCalculatorPage());
+      case '/emiplansofcustomer':
+        return MaterialPageRoute(builder: (context) => Emiplansofcustomer());
+      case '/emimcollectedtilldate':
+        return MaterialPageRoute(builder: (context) => EmiCollectedTillDate());
       default:
         return null;
     }

@@ -20,7 +20,12 @@ class _LandingpagetabbarState extends State<Landingpagetabbar> {
     'assets/b.png',
     'assets/c.png',
   ];
-
+  final products = [
+    {'image': 'assets/f3.jpg', 'title': 'Samsung TV', 'price': 'Rs.22000'},
+    {'image': 'assets/f2.jpg', 'title': 'Samsung TV', 'price': 'Rs.22000'},
+    {'image': 'assets/f1.jpg', 'title': 'Samsung TV', 'price': 'Rs.22000'},
+    {'image': 'assets/f3.jpg', 'title': 'Samsung TV', 'price': 'Rs.22000'},
+  ];
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -37,7 +42,7 @@ class _LandingpagetabbarState extends State<Landingpagetabbar> {
                   style: Theme.of(context)
                       .textTheme
                       .bodyLarge!
-                      .copyWith(fontWeight: FontWeight.w400),
+                      .copyWith(fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -65,7 +70,7 @@ class _LandingpagetabbarState extends State<Landingpagetabbar> {
                   }),
             ),
             SizedBox(
-              height: displayHeight(context) * 0.02,
+              height: displayHeight(context) * 0.01,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -76,120 +81,56 @@ class _LandingpagetabbarState extends State<Landingpagetabbar> {
                   style: Theme.of(context)
                       .textTheme
                       .bodyLarge!
-                      .copyWith(fontWeight: FontWeight.w400),
+                      .copyWith(fontWeight: FontWeight.bold),
                 ),
               ],
             ),
             SizedBox(
-              height: displayHeight(context) * 0.03,
+              height: displayHeight(context) * 0.01,
             ),
-            SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        height: displayHeight(context) * 0.25,
-                        width: displayWidth(context) * 0.3,
-                        decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                  color: ColorConstant.grey,
-                                  blurRadius: 0.01,
-                                  spreadRadius: 0.01)
-                            ],
-                            borderRadius: BorderRadius.circular(10),
-                            color: ColorConstant.white),
-                        child: Column(
-                          children: [
-                            Image.asset('assets/f3.jpg'),
-                            Text(
-                              'Samsung Tv\n Rs.22000',
-                              style: Theme.of(context).textTheme.bodyLarge,
-                            )
-                          ],
+            SizedBox(
+              height: displayHeight(context) * 0.2,
+              child: GridView.builder(
+                scrollDirection: Axis.vertical,
+                padding: EdgeInsets.all(10),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 20.0,
+                  mainAxisSpacing: 10.0,
+                  childAspectRatio: 0.8,
+                ),
+                itemCount: products.length,
+                itemBuilder: (context, index) {
+                  final product = products[index];
+                  return Container(
+                    height: displayHeight(context) * 0.01,
+                    width: displayWidth(context) * 0.02,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: ColorConstant.grey,
+                          blurRadius: 2.0,
+                          spreadRadius: 1.0,
+                          offset: Offset(2, 2),
                         ),
-                      ),
-                      Container(
-                        height: displayHeight(context) * 0.25,
-                        width: displayWidth(context) * 0.3,
-                        decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                  color: ColorConstant.grey,
-                                  blurRadius: 0.01,
-                                  spreadRadius: 0.01)
-                            ],
-                            borderRadius: BorderRadius.circular(10),
-                            color: ColorConstant.white),
-                        child: Column(
-                          children: [
-                            Image.asset('assets/f2.jpg'),
-                            Text(
-                              'Samsung Tv\n Rs.22000',
-                              style: Theme.of(context).textTheme.bodyLarge,
-                            )
-                          ],
+                      ],
+                      borderRadius: BorderRadius.circular(10),
+                      color: ColorConstant.white,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset(product['image']!, fit: BoxFit.cover),
+                        SizedBox(height: 8.0),
+                        Text(
+                          '${product['title']}\n${product['price']}',
+                          style: Theme.of(context).textTheme.bodyLarge,
+                          textAlign: TextAlign.center,
                         ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Container(
-                        height: displayHeight(context) * 0.25,
-                        width: displayWidth(context) * 0.3,
-                        decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                  color: ColorConstant.grey,
-                                  blurRadius: 0.01,
-                                  spreadRadius: 0.01)
-                            ],
-                            borderRadius: BorderRadius.circular(10),
-                            color: ColorConstant.white),
-                        child: Column(
-                          children: [
-                            Image.asset('assets/f1.jpg'),
-                            Text(
-                              'Samsung Tv\n Rs.22000',
-                              style: Theme.of(context).textTheme.bodyLarge,
-                            )
-                          ],
-                        ),
-                      ),
-                      Container(
-                        height: displayHeight(context) * 0.25,
-                        width: displayWidth(context) * 0.3,
-                        decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                  color: ColorConstant.grey,
-                                  blurRadius: 0.01,
-                                  spreadRadius: 0.01)
-                            ],
-                            borderRadius: BorderRadius.circular(10),
-                            color: ColorConstant.white),
-                        child: Column(
-                          children: [
-                            Image.asset('assets/f3.jpg'),
-                            Text(
-                              'Samsung Tv\n Rs.22000',
-                              style: Theme.of(context).textTheme.bodyLarge,
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  );
+                },
               ),
             ),
           ],

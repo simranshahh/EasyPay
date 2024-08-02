@@ -23,7 +23,7 @@ class _LandingpageState extends State<Landingpage> {
         // bottomNavigationBar: Bottomnavbar(),
         body: Stack(children: [
           Container(
-            height: displayHeight(context) * 0.2,
+            height: displayHeight(context) * 0.1,
             width: displayWidth(context),
             decoration: BoxDecoration(
                 color: ColorConstant.land,
@@ -34,6 +34,7 @@ class _LandingpageState extends State<Landingpage> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 100),
             child: SearchBar(
+              
               leading: Icon(
                 Icons.search,
                 color: ColorConstant.grey,

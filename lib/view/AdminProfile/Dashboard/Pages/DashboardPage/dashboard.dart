@@ -24,38 +24,33 @@ class _DashboardState extends State<Dashboard> {
     super.initState();
   }
 
-  // int _selectedIndex = 0;
-  // static TextStyle optionStyle =
-  //     TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-
-  // void _onItemTapped(int index) {
-  //   setState(() {
-  //     _selectedIndex = index;
-  //   });
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SliderDrawer(
-          appBar: SliderAppBar(
-              appBarColor: ColorConstant.land,
-              title: Text(title,
-                  style: TextStyle(
-                      color: ColorConstant.white,
-                      fontSize: 22,
-                      fontWeight: FontWeight.w700))),
-          key: _sliderDrawerKey,
-          sliderOpenSize: 182,
-          slider: _SliderView(
-            onItemClick: (title) {
-              _sliderDrawerKey.currentState!.closeSlider();
-              setState(() {
-                this.title = title;
-              });
-            },
+        appBar: SliderAppBar(
+          appBarColor: ColorConstant.land,
+          title: Text(
+            title,
+            style: TextStyle(
+              color: ColorConstant.white,
+              fontSize: 22,
+              fontWeight: FontWeight.w700,
+            ),
           ),
-          child: _AuthorList()),
+        ),
+        key: _sliderDrawerKey,
+        sliderOpenSize: 250,
+        slider: _SliderView(
+          onItemClick: (title) {
+            _sliderDrawerKey.currentState!.closeSlider();
+            setState(() {
+              this.title = title;
+            });
+          },
+        ),
+        child: _AuthorList(),
+      ),
     );
   }
 }
@@ -68,383 +63,156 @@ class _SliderView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.white,
+      color: ColorConstant.land.withOpacity(0.1),
       padding: const EdgeInsets.only(top: 0),
       child: ListView(
         children: <Widget>[
-          // SizedBox(
-          //   height: 30,
-          // ),
-          Column(children: [
-            Container(
-              height: 250,
-              width: displayWidth(context),
-              color: ColorConstant.land,
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 50,
-                  ),
-                  CircleAvatar(
-                    radius: 65,
-                    backgroundColor: Colors.white,
-                    child: CircleAvatar(
-                      radius: 60,
-                      backgroundImage: Image.network(
-                              'https://nikhilvadoliya.github.io/assets/images/nikhil_1.webp')
-                          .image,
+          Column(
+            children: [
+              Container(
+                height: 250,
+                width: displayWidth(context),
+                color: ColorConstant.land,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 50,
                     ),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(
-                    'Super User',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
+                    CircleAvatar(
+                      radius: 65,
+                      backgroundColor: Colors.white,
+                      child: CircleAvatar(
+                        radius: 60,
+                        backgroundImage: NetworkImage(
+                          'https://nikhilvadoliya.github.io/assets/images/nikhil_1.webp',
+                        ),
+                      ),
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      'Super User',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            )
-          ]),
-          const SizedBox(
-            height: 20,
+            ],
           ),
           const SizedBox(
             height: 20,
           ),
+          Divider(thickness: 1),
           ...[
-            ExpansionTile(
-                title: Text(
-                  'Hotel Management',
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                  ),
-                ),
-                children: [
-                  ListTile(
-                    title: Text(
-                      'Banners',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    // selected: _selectedIndex == 0,
-                    onTap: () {
-                      Navigator.pushNamed(context, '/bannerpage');
-                    },
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Categories ',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    // selected: _selectedIndex == 0,
-                    onTap: () {
-                      Navigator.pushNamed(context, '/categorypage');
-                    },
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Add Products',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    // selected: _selectedIndex == 0,
-                    onTap: () {
-                      Navigator.pushNamed(context, '/addproductpage');
-                    },
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Electronics ',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    // selected: _selectedIndex == 0,
-                    onTap: () {
-                      Navigator.pushNamed(context, '/electronicspage');
-                    },
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Furnitures',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    // selected: _selectedIndex == 0,
-                    onTap: () {
-                      Navigator.pushNamed(context, '/furniturespage');
-                    },
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Enquiriers ',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    // selected: _selectedIndex == 0,
-                    onTap: () {
-                      Navigator.pushNamed(context, '/electronicspage');
-                    },
-                  ),
-                ]),
-            ExpansionTile(
-                title: Text(
-                  'User Management',
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                  ),
-                ),
-                children: [
-                  ListTile(
-                    title: const Text(
-                      'Members',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    // selected: _selectedIndex == 0,
-                    onTap: () {
-                      Navigator.pushNamed(context, '/memberpage');
-                    },
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Employees ',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    // selected: _selectedIndex == 0,
-                    onTap: () {
-                      Navigator.pushNamed(context, '/employeepage');
-                    },
-                  ),
-                ]),
-            ExpansionTile(
-                title: Text(
-                  'Master',
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                  ),
-                ),
-                children: [
-                  ListTile(
-                    title: const Text(
-                      'Roles',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    // selected: _selectedIndex == 2,
-                    onTap: () {
-                      Navigator.pushNamed(context, '/rolespage');
-                    },
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Employee Roles',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    // selected: _selectedIndex == 2,
-                    onTap: () {
-                      Navigator.pushNamed(context, '/employeerolespage');
-                    },
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Branches',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    // selected: _selectedIndex == 2,
-                    onTap: () {
-                      Navigator.pushNamed(context, '/branchespage');
-                    },
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Series',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    // selected: _selectedIndex == 2,
-                    onTap: () {
-                      Navigator.pushNamed(context, '/seriespage');
-                    },
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Mail SMS Service',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    // selected: _selectedIndex == 2,
-                    onTap: () {
-                      Navigator.pushNamed(context, '/mailsmsservicepage');
-                    },
-                  ),
-                ]),
-            ExpansionTile(
-                title: Text(
-                  'Loan Plans',
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                  ),
-                ),
-                children: [
-                  ListTile(
-                    title: const Text('Emi Plans Of Customer'),
-                    // selected: _selectedIndex == 3,
-                    onTap: () {
-                      // _onItemTapped(3);
-                      Navigator.pop(context);
-                    },
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Emi Colleccted Till Date',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    // selected: _selectedIndex == 3,
-                    onTap: () {
-                      // _onItemTapped(3);
-                      Navigator.pop(context);
-                    },
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Loan Calculator',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    // selected: _selectedIndex == 3,
-                    onTap: () {
-                      Navigator.pushNamed(context, '/loancalculatorpage');
-                    },
-                  ),
-                ]),
-            ExpansionTile(
-                title: Text(
-                  'Banking',
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                  ),
-                ),
-                children: [
-                  ListTile(
-                    title: const Text(
-                      'Deposit',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    // selected: _selectedIndex == 4,
-                    onTap: () {
-                      // _onItemTapped(4);
-                      Navigator.pop(context);
-                    },
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Withdrawn',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    // selected: _selectedIndex == 4,
-                    onTap: () {
-                      // _onItemTapped(4);
-                      Navigator.pop(context);
-                    },
-                  ),
-                  ListTile(
-                    title: const Text(
-                      'Transaction',
-                      style: TextStyle(
-                        fontFamily: 'Montserrat',
-                      ),
-                    ),
-                    // selected: _selectedIndex == 4,
-                    onTap: () {
-                      // _onItemTapped(4);
-                      Navigator.pop(context);
-                    },
-                  ),
-                ]),
-            ExpansionTile(
-                title: Text(
-                  'Geo Tracker',
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                  ),
-                ),
-                children: [
-                  ListTile(
-                    title: const Text('Visit History'),
-                    // selected: _selectedIndex == 5,
-                    onTap: () {
-                      // _onItemTapped(5);
-                      Navigator.pop(context);
-                    },
-                  ),
-                ]),
-            ExpansionTile(
-              title: Text(
-                'Profile Settings',
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                ),
-              ),
-              children: [
-                ListTile(
-                  title: Text(
-                    'User Profile',
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                    ),
-                  ),
-                  // selected: _selectedIndex == 7,
-                  onTap: () {
-                    Navigator.pushNamed(context, '/memberprofilepage');
-                  },
-                ),
-                ListTile(
-                  title: Text(
-                    'Company Profile',
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                    ),
-                  ),
-                  // selected: _selectedIndex == 7,
-                  onTap: () {
-                    Navigator.pushNamed(context, '/memberprofilepage');
-                  },
-                ),
+            _buildExpansionTile(
+              context,
+              title: 'Hotel Management',
+              items: [
+                _buildListTile(context, 'Banners', '/bannerpage'),
+                _buildListTile(context, 'Categories', '/categorypage'),
+                _buildListTile(context, 'Add Products', '/addproductpage'),
+                _buildListTile(context, 'Electronics', '/electronicspage'),
+                _buildListTile(context, 'Furnitures', '/furniturespage'),
+                _buildListTile(context, 'Enquiries', '/enquiriespage'),
+              ],
+            ),
+            _buildExpansionTile(
+              context,
+              title: 'User Management',
+              items: [
+                _buildListTile(context, 'Members', '/memberpage'),
+                _buildListTile(context, 'Employees', '/employeepage'),
+              ],
+            ),
+            _buildExpansionTile(
+              context,
+              title: 'Master',
+              items: [
+                _buildListTile(context, 'Roles', '/rolespage'),
+                _buildListTile(context, 'Employee Roles', '/employeerolespage'),
+                _buildListTile(context, 'Branches', '/branchespage'),
+                _buildListTile(context, 'Series', '/seriespage'),
+                _buildListTile(
+                    context, 'Mail SMS Service', '/mailsmsservicepage'),
+              ],
+            ),
+            _buildExpansionTile(
+              context,
+              title: 'Loan Plans',
+              items: [
+                _buildListTile(
+                    context, 'Emi Plans Of Customer', '/emiplanspage'),
+                _buildListTile(
+                    context, 'Emi Collected Till Date', '/emicollectedpage'),
+                _buildListTile(
+                    context, 'Loan Calculator', '/loancalculatorpage'),
+              ],
+            ),
+            _buildExpansionTile(
+              context,
+              title: 'Banking',
+              items: [
+                _buildListTile(context, 'Deposit', '/depositpage'),
+                _buildListTile(context, 'Withdrawn', '/withdrawnpage'),
+                _buildListTile(context, 'Transaction', '/transactionpage'),
+              ],
+            ),
+            _buildExpansionTile(
+              context,
+              title: 'Geo Tracker',
+              items: [
+                _buildListTile(context, 'Visit History', '/visithistorypage'),
+              ],
+            ),
+            _buildExpansionTile(
+              context,
+              title: 'Profile Settings',
+              items: [
+                _buildListTile(context, 'User Profile', '/memberprofilepage'),
+                _buildListTile(
+                    context, 'Company Profile', '/companyprofilepage'),
               ],
             ),
           ]
         ],
       ),
+    );
+  }
+
+  Widget _buildExpansionTile(BuildContext context,
+      {required String title, required List<Widget> items}) {
+    return ExpansionTile(
+      title: Text(
+        title,
+        style: TextStyle(
+          fontFamily: 'Montserrat',
+          fontWeight: FontWeight.w500,
+          fontSize: 18,
+        ),
+      ),
+      children: items,
+    );
+  }
+
+  Widget _buildListTile(BuildContext context, String title, String route) {
+    return ListTile(
+      leading: Icon(Icons.arrow_forward_ios),
+      title: Text(
+        title,
+        style: TextStyle(
+          fontFamily: 'Montserrat',
+          fontSize: 16,
+        ),
+      ),
+      onTap: () {
+        Navigator.pushNamed(context, route);
+      },
     );
   }
 }

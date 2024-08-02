@@ -21,7 +21,6 @@ class MyApp extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
     ));
-    true;
 
     return BlocProvider(
       create: (context) => LoginBloc(),
