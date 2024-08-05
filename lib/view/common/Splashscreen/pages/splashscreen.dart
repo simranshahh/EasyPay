@@ -2,7 +2,7 @@
 
 import 'package:easy_splash_screen/easy_splash_screen.dart';
 import 'package:easypay/utils/color_constants.dart';
-import 'package:easypay/view/Auth/Login/pages/loginn.dart';
+import 'package:easypay/view/common/Auth/Login/pages/loginn.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

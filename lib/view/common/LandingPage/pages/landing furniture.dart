@@ -1,29 +1,22 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, file_names, unused_import, prefer_const_literals_to_create_immutables
 
 import 'package:easypay/utils/color_constants.dart';
 import 'package:easypay/utils/size_config.dart';
-import 'package:easypay/view/LandingPage/pages/electronicstabbar.dart';
+import 'package:easypay/view/common/LandingPage/pages/furnituretabbar.dart';
 import 'package:flutter/material.dart';
 
-class LandingElectronics extends StatefulWidget {
-  const LandingElectronics({super.key});
+class LandingFurniture extends StatelessWidget {
+  const LandingFurniture({super.key});
 
-  @override
-  State<LandingElectronics> createState() => _LandingElectronicsState();
-}
-
-class _LandingElectronicsState extends State<LandingElectronics> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
-          backgroundColor: ColorConstant.land,
-          title: Text(
-            'Electronics Items',
-            style: TextStyle(color: ColorConstant.white),
-          ),
+          // controller: controller,
+          title: Text("Furniture Items"),
         ),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -40,7 +33,7 @@ class _LandingElectronicsState extends State<LandingElectronics> {
                         prefixIcon: Icon(Icons.search, color: Colors.grey),
                         hintText: 'Search',
                         filled: true,
-                        fillColor: ColorConstant.white,
+                        fillColor: Colors.white,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide.none,
@@ -88,7 +81,7 @@ class _LandingElectronicsState extends State<LandingElectronics> {
                     ),
                   ],
                   image: DecorationImage(
-                    image: AssetImage('assets/banner.jpg'),
+                    image: AssetImage('assets/baner.jpg'),
                     fit: BoxFit.cover,
                     colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.3),
@@ -98,10 +91,10 @@ class _LandingElectronicsState extends State<LandingElectronics> {
                 ),
                 alignment: Alignment.center,
                 child: Text(
-                  'Summer Sale\nUp to 50% Off!',
+                  'Exclusive Furniture\nUp to 50% Off!',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: ColorConstant.white,
+                    color: Colors.white,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                     shadows: [
@@ -122,25 +115,30 @@ class _LandingElectronicsState extends State<LandingElectronics> {
                 children: [
                   Text(
                     'Categories',
-                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      // Add navigation or other logic for 'See All' here
+                    },
                     child: Text(
                       'See All',
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            decoration: TextDecoration.underline,
-                            color: ColorConstant.land,
-                            fontWeight: FontWeight.w500,
-                          ),
+                      style:
+                          Theme.of(context).textTheme.headlineSmall!.copyWith(
+                                decoration: TextDecoration.underline,
+                                color: ColorConstant.land,
+                                fontWeight: FontWeight.w500,
+                              ),
                     ),
                   ),
                 ],
               ),
+              SizedBox(height: 10),
 
-              Expanded(child: ProductTabBar()),
+              // Furniture Tab Bar
+              Expanded(child: FurnitureTabBar()),
             ],
           ),
         ),
@@ -148,3 +146,5 @@ class _LandingElectronicsState extends State<LandingElectronics> {
     );
   }
 }
+
+final controller = ScrollController();

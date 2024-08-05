@@ -1,22 +1,29 @@
-// ignore_for_file: prefer_const_constructors, file_names, unused_import, prefer_const_literals_to_create_immutables
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:easypay/utils/color_constants.dart';
 import 'package:easypay/utils/size_config.dart';
-import 'package:easypay/view/LandingPage/pages/furnituretabbar.dart';
+import 'package:easypay/view/common/LandingPage/pages/electronicstabbar.dart';
 import 'package:flutter/material.dart';
 
-class LandingFurniture extends StatelessWidget {
-  const LandingFurniture({super.key});
+class LandingElectronics extends StatefulWidget {
+  const LandingElectronics({super.key});
 
+  @override
+  State<LandingElectronics> createState() => _LandingElectronicsState();
+}
+
+class _LandingElectronicsState extends State<LandingElectronics> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
         resizeToAvoidBottomInset: true,
         appBar: AppBar(
-          // controller: controller,
-          title: Text("Furniture Items"),
+          backgroundColor: ColorConstant.land,
+          title: Text(
+            'Electronics Items',
+            style: TextStyle(color: ColorConstant.white),
+          ),
         ),
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -33,7 +40,7 @@ class LandingFurniture extends StatelessWidget {
                         prefixIcon: Icon(Icons.search, color: Colors.grey),
                         hintText: 'Search',
                         filled: true,
-                        fillColor: Colors.white,
+                        fillColor: ColorConstant.white,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide.none,
@@ -81,7 +88,7 @@ class LandingFurniture extends StatelessWidget {
                     ),
                   ],
                   image: DecorationImage(
-                    image: AssetImage('assets/baner.jpg'),
+                    image: AssetImage('assets/banner.jpg'),
                     fit: BoxFit.cover,
                     colorFilter: ColorFilter.mode(
                       Colors.black.withOpacity(0.3),
@@ -91,10 +98,10 @@ class LandingFurniture extends StatelessWidget {
                 ),
                 alignment: Alignment.center,
                 child: Text(
-                  'Exclusive Furniture\nUp to 50% Off!',
+                  'Summer Sale\nUp to 50% Off!',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: ColorConstant.white,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                     shadows: [
@@ -115,30 +122,25 @@ class LandingFurniture extends StatelessWidget {
                 children: [
                   Text(
                     'Categories',
-                    style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
                   ),
                   GestureDetector(
-                    onTap: () {
-                      // Add navigation or other logic for 'See All' here
-                    },
+                    onTap: () {},
                     child: Text(
                       'See All',
-                      style:
-                          Theme.of(context).textTheme.headlineSmall!.copyWith(
-                                decoration: TextDecoration.underline,
-                                color: ColorConstant.land,
-                                fontWeight: FontWeight.w500,
-                              ),
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            decoration: TextDecoration.underline,
+                            color: ColorConstant.land,
+                            fontWeight: FontWeight.w500,
+                          ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 10),
 
-              // Furniture Tab Bar
-              Expanded(child: FurnitureTabBar()),
+              Expanded(child: ProductTabBar()),
             ],
           ),
         ),
@@ -146,5 +148,3 @@ class LandingFurniture extends StatelessWidget {
     );
   }
 }
-
-final controller = ScrollController();

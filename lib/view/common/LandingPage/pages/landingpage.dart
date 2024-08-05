@@ -2,8 +2,8 @@
 
 import 'package:easypay/utils/color_constants.dart';
 import 'package:easypay/utils/size_config.dart';
-import 'package:easypay/view/LandingPage/pages/bottomnavbar.dart';
-import 'package:easypay/view/LandingPage/pages/landingpagetabbar.dart';
+import 'package:easypay/view/common/LandingPage/pages/bottomnavbar.dart';
+import 'package:easypay/view/common/LandingPage/pages/landingpagetabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 

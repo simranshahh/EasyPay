@@ -2,7 +2,7 @@
 
 import 'package:easypay/utils/color_constants.dart';
 import 'package:easypay/utils/size_config.dart';
-import 'package:easypay/view/Auth/Fogetpassword/pages/newpwset.dart';
+import 'package:easypay/view/common/Auth/Fogetpassword/pages/newpwset.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:async';

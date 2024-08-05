@@ -3,7 +3,7 @@
 import 'package:easypay/routes/myrouters.dart';
 import 'package:easypay/utils/color_constants.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/DashboardPage/dashboard.dart';
-import 'package:easypay/view/Auth/Login/Bloc/login_bloc.dart';
+import 'package:easypay/view/common/Auth/Login/Bloc/login_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

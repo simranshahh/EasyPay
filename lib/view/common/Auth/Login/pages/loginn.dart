@@ -2,9 +2,9 @@
 
 import 'package:easypay/utils/color_constants.dart';
 import 'package:easypay/utils/size_config.dart';
-import 'package:easypay/view/Auth/Login/Bloc/login_bloc.dart';
-import 'package:easypay/view/Auth/Login/Bloc/login_event.dart';
-import 'package:easypay/view/Auth/Login/Bloc/login_state.dart';
+import 'package:easypay/view/common/Auth/Login/Bloc/login_bloc.dart';
+import 'package:easypay/view/common/Auth/Login/Bloc/login_event.dart';
+import 'package:easypay/view/common/Auth/Login/Bloc/login_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

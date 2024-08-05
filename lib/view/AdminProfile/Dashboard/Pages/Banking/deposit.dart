@@ -23,6 +23,7 @@ class _DepositPageState extends State<DepositPage> {
     _branchController.clear();
     _phoneController.clear();
     _amountController.clear();
+
     setState(() {
       _selectedCustomer = null;
     });

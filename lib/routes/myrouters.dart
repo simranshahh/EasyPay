@@ -3,6 +3,8 @@
 import 'package:easypay/components/useremitabbar.dart';
 import 'package:easypay/main.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/Banking/deposit.dart';
+import 'package:easypay/view/AdminProfile/Dashboard/Pages/Banking/transactions.dart';
+import 'package:easypay/view/AdminProfile/Dashboard/Pages/Banking/withdrawl.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/GeoTracker/visithistory.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/HomeManagement/AddProduct/addproductpage.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/HomeManagement/Banner/bannerpage.dart';
@@ -20,21 +22,22 @@ import 'package:easypay/view/AdminProfile/Dashboard/Pages/Master/Roles/rolespage
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/Master/Series/seriespage.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/UserManagement/Employee/employeepage.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/UserManagement/Member/memberpage.dart';
-import 'package:easypay/view/Auth/Fogetpassword/pages/forgetpassword.dart';
-import 'package:easypay/view/Auth/Fogetpassword/pages/newpwset.dart';
-import 'package:easypay/view/Auth/Fogetpassword/pages/otp.dart';
-import 'package:easypay/view/Auth/Login/pages/loginn.dart';
+import 'package:easypay/view/common/Auth/Fogetpassword/pages/forgetpassword.dart';
+import 'package:easypay/view/common/Auth/Fogetpassword/pages/newpwset.dart';
+import 'package:easypay/view/common/Auth/Fogetpassword/pages/otp.dart';
+import 'package:easypay/view/common/Auth/Login/pages/loginn.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/DashboardPage/dashboard.dart';
 import 'package:easypay/view/AdminProfile/Homepapge/dashhomepage.dart';
-import 'package:easypay/view/LandingPage/pages/landingpage.dart';
+import 'package:easypay/view/common/LandingPage/pages/landingpage.dart';
 import 'package:easypay/view/MemberProfile/AccountInfomation/Pages/accountinformation.dart';
-import 'package:easypay/view/LandingPage/pages/bottomnavbar.dart';
+import 'package:easypay/view/common/LandingPage/pages/bottomnavbar.dart';
 import 'package:easypay/components/imagepicker.dart';
 import 'package:easypay/view/MemberProfile/EmiPlans/emiplans.dart';
 import 'package:easypay/view/MemberProfile/Profile/Pages/profilepage.dart';
 import 'package:easypay/view/MemberProfile/Profile/Pages/userprofile.dart';
-import 'package:easypay/view/Onboarding/onboardingpage.dart';
-import 'package:easypay/view/Splashscreen/pages/splashscreen.dart';
+
+import 'package:easypay/view/common/Onboarding/onboardingpage.dart';
+import 'package:easypay/view/common/Splashscreen/pages/splashscreen.dart';
 import 'package:flutter/material.dart';
 
 class MyRoutes {
@@ -118,6 +121,10 @@ class MyRoutes {
         return MaterialPageRoute(builder: (context) => VisitHistory());
       case '/depositpage':
         return MaterialPageRoute(builder: (context) => DepositPage());
+      case '/withdrawpage':
+        return MaterialPageRoute(builder: (context) => Withdrawl());
+      case '/transactionpage':
+        return MaterialPageRoute(builder: (context) => TransactionsPage());
       default:
         return null;
     }

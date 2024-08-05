@@ -3,7 +3,7 @@
 import 'package:easypay/components/useremitabbar.dart';
 import 'package:easypay/utils/color_constants.dart';
 import 'package:easypay/utils/size_config.dart';
-import 'package:easypay/view/Auth/Login/pages/loginn.dart';
+import 'package:easypay/view/common/Auth/Login/pages/loginn.dart';
 import 'package:flutter/material.dart';
 
 class EmiPlansPage extends StatefulWidget {
