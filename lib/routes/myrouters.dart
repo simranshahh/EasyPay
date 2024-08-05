@@ -2,6 +2,7 @@
 
 import 'package:easypay/components/useremitabbar.dart';
 import 'package:easypay/main.dart';
+import 'package:easypay/view/AdminProfile/Dashboard/Pages/GeoTracker/visithistory.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/HomeManagement/AddProduct/addproductpage.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/HomeManagement/Banner/bannerpage.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/HomeManagement/Banner/datatable.dart';
@@ -110,8 +111,10 @@ class MyRoutes {
         return MaterialPageRoute(builder: (context) => LoanCalculatorPage());
       case '/emiplansofcustomer':
         return MaterialPageRoute(builder: (context) => LoanPlansPage());
-      case '/emimcollectedtilldate':
+      case '/emicollectedpage':
         return MaterialPageRoute(builder: (context) => EmiCollectedTillDate());
+      case '/visithistorypage':
+        return MaterialPageRoute(builder: (context) => VisitHistory());
       default:
         return null;
     }
