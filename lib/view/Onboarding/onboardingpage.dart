@@ -83,7 +83,7 @@ class PageData {
 class _Page extends StatelessWidget {
   final PageData page;
 
-  const _Page({Key? key, required this.page}) : super(key: key);
+  _Page({Key? key, required this.page}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

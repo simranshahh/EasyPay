@@ -40,7 +40,7 @@ class _LandingElectronicsState extends State<LandingElectronics> {
                         prefixIcon: Icon(Icons.search, color: Colors.grey),
                         hintText: 'Search',
                         filled: true,
-                        fillColor: Colors.white,
+                        fillColor: ColorConstant.white,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide: BorderSide.none,
@@ -101,7 +101,7 @@ class _LandingElectronicsState extends State<LandingElectronics> {
                   'Summer Sale\nUp to 50% Off!',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: ColorConstant.white,
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
                     shadows: [

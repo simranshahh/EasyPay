@@ -1,7 +1,8 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, library_private_types_in_public_api, unused_element, prefer_is_empty
 
 import 'package:easypay/utils/color_constants.dart';
 import 'package:easypay/utils/size_config.dart';
+import 'package:easypay/view/Auth/Fogetpassword/pages/otp.dart';
 import 'package:easypay/view/Auth/Login/pages/loginn.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +12,18 @@ class SetNewPasswordPage extends StatefulWidget {
 }
 
 class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
+  String? validateMobile(String value) {
+    String pattern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
+    RegExp regExp = new RegExp(pattern);
+
+    if (value.length == 0) {
+      return 'Please enter mobile number';
+    } else if (!regExp.hasMatch(value)) {
+      return 'Please enter valid mobile number';
+    }
+    return null;
+  }
+
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -49,7 +62,20 @@ class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorConstant.white,
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (BuildContext context) => OtpInputPage()));
+          },
+          icon: Icon(
+            Icons.arrow_back,
+            color: ColorConstant.white,
+          ),
+        ),
         title: Text(
           'Set New Password',
           style: TextStyle(color: ColorConstant.white),

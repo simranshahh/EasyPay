@@ -2,6 +2,7 @@
 
 import 'package:easypay/utils/color_constants.dart';
 import 'package:easypay/utils/size_config.dart';
+import 'package:easypay/view/Auth/Login/pages/loginn.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPassword extends StatefulWidget {
@@ -16,7 +17,19 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: ColorConstant.white,
         appBar: AppBar(
+          leading: IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => LoginScreen()));
+              },
+              icon: Icon(
+                Icons.arrow_back,
+                color: ColorConstant.white,
+              )),
           backgroundColor: ColorConstant.land,
           title: Text(
             'Forgot Password',
@@ -88,6 +101,10 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     width: 330,
                     height: 45,
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: ColorConstant.land, // background
+                        foregroundColor: ColorConstant.white, // foreground
+                      ),
                       onPressed: () {
                         Navigator.pushNamed(context, '/otp');
                       },

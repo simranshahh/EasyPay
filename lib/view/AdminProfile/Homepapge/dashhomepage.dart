@@ -18,6 +18,7 @@ class _DashHomePageState extends State<DashHomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: ColorConstant.white,
         body: Container(
           color: ColorConstant.white,
           height: displayHeight(context),
@@ -72,7 +73,7 @@ class _DashHomePageState extends State<DashHomePage> {
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 10.0),
+                    padding: EdgeInsets.only(top: 10.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -120,7 +121,7 @@ class _DashHomePageState extends State<DashHomePage> {
                     ),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: displayHeight(context) * 0.01,
                   ),
                   SizedBox(
                     // color: Colors.red,

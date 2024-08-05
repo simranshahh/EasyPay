@@ -103,7 +103,8 @@ class _RecordTableState extends State<RecordTable> {
                       radius: 14,
                       child: Text(
                         '0',
-                        style: TextStyle(fontSize: 16, color: Colors.white),
+                        style:
+                            TextStyle(fontSize: 16, color: ColorConstant.white),
                       ), //Text
                     ),
                     CircleAvatar(
@@ -111,7 +112,8 @@ class _RecordTableState extends State<RecordTable> {
                       radius: 14,
                       child: Text(
                         '0',
-                        style: TextStyle(fontSize: 16, color: Colors.white),
+                        style:
+                            TextStyle(fontSize: 16, color: ColorConstant.white),
                       ), //Text
                     ),
                     CircleAvatar(
@@ -119,7 +121,8 @@ class _RecordTableState extends State<RecordTable> {
                       radius: 14,
                       child: Text(
                         '0',
-                        style: TextStyle(fontSize: 16, color: Colors.white),
+                        style:
+                            TextStyle(fontSize: 16, color: ColorConstant.white),
                       ), //Text
                     ),
                     CircleAvatar(
@@ -127,7 +130,8 @@ class _RecordTableState extends State<RecordTable> {
                       radius: 14,
                       child: Text(
                         '0',
-                        style: TextStyle(fontSize: 16, color: Colors.white),
+                        style:
+                            TextStyle(fontSize: 16, color: ColorConstant.white),
                       ), //Text
                     ),
                   ],

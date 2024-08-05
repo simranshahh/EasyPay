@@ -2,6 +2,7 @@
 
 import 'package:easypay/components/useremitabbar.dart';
 import 'package:easypay/main.dart';
+import 'package:easypay/view/AdminProfile/Dashboard/Pages/Banking/deposit.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/GeoTracker/visithistory.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/HomeManagement/AddProduct/addproductpage.dart';
 import 'package:easypay/view/AdminProfile/Dashboard/Pages/HomeManagement/Banner/bannerpage.dart';
@@ -115,6 +116,8 @@ class MyRoutes {
         return MaterialPageRoute(builder: (context) => EmiCollectedTillDate());
       case '/visithistorypage':
         return MaterialPageRoute(builder: (context) => VisitHistory());
+      case '/depositpage':
+        return MaterialPageRoute(builder: (context) => DepositPage());
       default:
         return null;
     }

@@ -18,21 +18,21 @@ class _ImagePickerTemplateState extends State<ImagePickerTemplate> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           'Image Picker',
         ),
       ),
       body: Center(
         child: _image == null
-            ? const Text(
-                'No image selected.',
+            ? Text(
+                'No image selected!',
               )
             : Image.file(File(_image!.path)),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: getImage,
         tooltip: 'Pick Image',
-        child: const Icon(Icons.add_a_photo),
+        child: Icon(Icons.add_a_photo),
       ),
     );
   }

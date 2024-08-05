@@ -16,7 +16,7 @@ class _AccountInformationPageState extends State<AccountInformationPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color.fromARGB(255, 244, 244, 244),
+        backgroundColor: ColorConstant.white,
         body: Stack(children: [
           Container(
             width: MediaQuery.of(context).size.width,
@@ -143,7 +143,7 @@ class _AccountInformationPageState extends State<AccountInformationPage> {
                       ),
                       Text(
                         'Amont',
-                        style: TextStyle(color: Colors.grey),
+                        style: TextStyle(color: ColorConstant.grey),
                       )
                     ],
                   ),

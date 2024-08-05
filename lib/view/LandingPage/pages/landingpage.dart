@@ -19,7 +19,7 @@ class _LandingpageState extends State<Landingpage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: ColorConstant.white,
         // bottomNavigationBar: Bottomnavbar(),
         body: Stack(children: [
           Container(
@@ -34,7 +34,6 @@ class _LandingpageState extends State<Landingpage> {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 100),
             child: SearchBar(
-              
               leading: Icon(
                 Icons.search,
                 color: ColorConstant.grey,
@@ -42,7 +41,7 @@ class _LandingpageState extends State<Landingpage> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 22.0),
+            padding:  EdgeInsets.symmetric(vertical: 22.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -62,28 +61,28 @@ class _LandingpageState extends State<Landingpage> {
                 CarouselSlider(
                   items: [
                     Container(
-                      margin: const EdgeInsets.all(8.0),
+                      margin:  EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.0),
-                        image: const DecorationImage(
+                        image:  DecorationImage(
                           image: AssetImage("assets/banner.jpg"),
                         ),
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.all(8.0),
+                      margin:  EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.0),
-                        image: const DecorationImage(
+                        image:  DecorationImage(
                           image: AssetImage("assets/baner.jpg"),
                         ),
                       ),
                     ),
                     Container(
-                      margin: const EdgeInsets.all(8.0),
+                      margin:  EdgeInsets.all(8.0),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10.0),
-                        image: const DecorationImage(
+                        image:  DecorationImage(
                             image: AssetImage("assets/banner1.jpg")),
                       ),
                     ),

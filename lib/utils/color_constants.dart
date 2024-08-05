@@ -16,4 +16,5 @@ class ColorConstant {
   static Color pointscolor = Color(0xFFFE9202);
   static Color white = Color.fromARGB(255, 255, 255, 255);
   static Color black = Color.fromARGB(0, 0, 0, 0);
+  static Color red = Color.fromARGB(255, 255, 0, 0);
 }

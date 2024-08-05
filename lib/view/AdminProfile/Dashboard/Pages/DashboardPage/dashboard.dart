@@ -64,23 +64,23 @@ class _SliderView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: ColorConstant.land.withOpacity(0.1),
-      padding: const EdgeInsets.only(top: 0),
+      // padding: const EdgeInsets.only(top: 0),
       child: ListView(
         children: <Widget>[
           Column(
             children: [
               Container(
-                height: 250,
+                height: displayHeight(context) * 0.3,
                 width: displayWidth(context),
                 color: ColorConstant.land,
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 50,
+                      height: displayHeight(context) * 0.04,
                     ),
                     CircleAvatar(
                       radius: 65,
-                      backgroundColor: Colors.white,
+                      backgroundColor: ColorConstant.white,
                       child: CircleAvatar(
                         radius: 60,
                         backgroundImage: NetworkImage(
@@ -89,7 +89,7 @@ class _SliderView extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: displayHeight(context) * 0.015,
                     ),
                     Text(
                       'Super User',
@@ -105,10 +105,10 @@ class _SliderView extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(
-            height: 20,
+          SizedBox(
+            height: displayHeight(context) * 0.01,
           ),
-          Divider(thickness: 1),
+          // Divider(thickness: 1),
           ...[
             _buildExpansionTile(
               context,

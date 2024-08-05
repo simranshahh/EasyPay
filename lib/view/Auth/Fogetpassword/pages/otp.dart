@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, avoid_print, prefer_const_constructors_in_immutables, prefer_typing_uninitialized_variables, must_be_immutable, prefer_final_fields, unused_field, deprecated_member_use
 
 import 'package:easypay/utils/color_constants.dart';
+import 'package:easypay/utils/size_config.dart';
 import 'package:easypay/view/Auth/Fogetpassword/pages/newpwset.dart';
 import 'package:flutter/material.dart';
 
@@ -71,7 +72,7 @@ class _OtpInputPageState extends State<OtpInputPage> {
               const SizedBox(height: 12.42),
               Center(
                 child: Text(
-                  'We’ve sent a OTP verification code to the e-mail associated.  \nEnter OTP code to continue.',
+                  'We’ve sent a OTP verification code to the phone associated.  \nEnter OTP code to continue.',
                   textScaleFactor: 1,
                   textAlign: TextAlign.center,
                   style: TextStyle(
@@ -106,7 +107,7 @@ class _OtpInputPageState extends State<OtpInputPage> {
                 ],
               ),
               SizedBox(
-                height: 30,
+                height: displayHeight(context) * 0.05,
               ),
               Center(
                 child: SizedBox(
@@ -130,8 +131,8 @@ class _OtpInputPageState extends State<OtpInputPage> {
                           borderRadius: BorderRadius.circular(30.0),
                         ),
                       ),
-                      backgroundColor: const MaterialStatePropertyAll(
-                        Color.fromARGB(255, 80, 115, 157),
+                      backgroundColor: MaterialStatePropertyAll(
+                        ColorConstant.white,
                       ),
                     ),
                     child: Center(
@@ -139,7 +140,7 @@ class _OtpInputPageState extends State<OtpInputPage> {
                         'Verify OTP',
                         style: TextStyle(
                             fontSize: 16,
-                            color: ColorConstant.white,
+                            color: ColorConstant.land,
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.w600),
                       ),
