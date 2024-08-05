@@ -2,32 +2,33 @@
 
 import 'package:easypay/components/useremitabbar.dart';
 import 'package:easypay/main.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/Banking/deposit.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/Banking/transactions.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/Banking/withdrawl.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/GeoTracker/visithistory.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/HomeManagement/AddProduct/addproductpage.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/HomeManagement/Banner/bannerpage.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/HomeManagement/Banner/datatable.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/HomeManagement/Categories/categorypage.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/HomeManagement/Electronics/electronicspage.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/HomeManagement/Furnitures/furniturepage.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/LoanPlans/emicollectedtilldate.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/LoanPlans/emiplansofcustomer.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/LoanPlans/loancalculator.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/Master/Branches/branchespage.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/Master/EmployeeRoles/employeerolespage.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/Master/MailSmsService/mailsmsservice.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/Master/Roles/rolespage.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/Master/Series/seriespage.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/UserManagement/Employee/employeepage.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/UserManagement/Member/memberpage.dart';
+import 'package:easypay/mmm.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/Banking/deposit.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/Banking/transactions.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/Banking/withdrawl.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/GeoTracker/visithistory.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/HomeManagement/AddProduct/addproductpage.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/HomeManagement/Banner/bannerpage.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/HomeManagement/Banner/datatable.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/HomeManagement/Categories/categorypage.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/HomeManagement/Electronics/electronicspage.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/HomeManagement/Furnitures/furniturepage.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/LoanPlans/emicollectedtilldate.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/LoanPlans/emiplansofcustomer.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/LoanPlans/loancalculator.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/Master/Branches/branchespage.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/Master/EmployeeRoles/employeerolespage.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/Master/MailSmsService/mailsmsservice.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/Master/Roles/rolespage.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/Master/Series/seriespage.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/UserManagement/Employee/employeepage.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/UserManagement/Member/memberpage.dart';
 import 'package:easypay/view/common/Auth/Fogetpassword/pages/forgetpassword.dart';
 import 'package:easypay/view/common/Auth/Fogetpassword/pages/newpwset.dart';
 import 'package:easypay/view/common/Auth/Fogetpassword/pages/otp.dart';
 import 'package:easypay/view/common/Auth/Login/pages/loginn.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/DashboardPage/dashboard.dart';
-import 'package:easypay/view/AdminProfile/Homepapge/dashhomepage.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/DashboardPage/dashboard.dart';
+import 'package:easypay/view/SuperUser/Homepapge/dashhomepage.dart';
 import 'package:easypay/view/common/LandingPage/pages/landingpage.dart';
 import 'package:easypay/view/MemberProfile/AccountInfomation/Pages/accountinformation.dart';
 import 'package:easypay/view/common/LandingPage/pages/bottomnavbar.dart';
@@ -45,7 +46,7 @@ class MyRoutes {
     // implement business logic here
     switch (settings.name) {
       case '/splash':
-        return MaterialPageRoute(builder: (context) => SplashScreen());
+        return MaterialPageRoute(builder: (context) => AnimationPage(title: '',));
       case '/login':
         return MaterialPageRoute(builder: (context) => LoginScreen());
       case '/landingpage':

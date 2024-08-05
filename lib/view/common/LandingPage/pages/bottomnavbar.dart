@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_final_fields
 
 import 'package:easypay/utils/color_constants.dart';
-import 'package:easypay/view/AdminProfile/Dashboard/Pages/DashboardPage/dashboard.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/DashboardPage/dashboard.dart';
 import 'package:easypay/view/common/LandingPage/pages/landing%20furniture.dart';
 import 'package:easypay/view/common/LandingPage/pages/landingelectronics.dart';
 import 'package:easypay/view/common/LandingPage/pages/landingpage.dart';

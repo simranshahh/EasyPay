@@ -96,7 +96,7 @@ class LoginScreen extends StatelessWidget {
                           validator: (value) {
                             String? validateMobile(String value) {
                               String pattern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
-                              RegExp regExp = new RegExp(pattern);
+                              RegExp regExp = RegExp(pattern);
 
                               if (value.isEmpty) {
                                 return 'Please enter mobile number';
