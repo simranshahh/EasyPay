@@ -26,7 +26,7 @@ class _LoanCalculatorPageState extends State<LoanCalculatorPage> {
 
     if (loanAmount <= 0 || annualInterestRate <= 0 || loanTermMonths <= 0) {
       setState(() {
-        _emiResult = "Please enter valid values.";
+        _emiResult = "Please enter valid values..";
       });
       return;
     }

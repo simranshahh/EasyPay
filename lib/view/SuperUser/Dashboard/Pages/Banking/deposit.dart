@@ -43,7 +43,9 @@ class _DepositPageState extends State<DepositPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Deposit Page'),
+        automaticallyImplyLeading: false,
+        title: Text('Deposit Page', style: TextStyle(fontSize: 22)),
+        backgroundColor: Colors.deepPurple,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -51,84 +53,28 @@ class _DepositPageState extends State<DepositPage> {
           key: _formKey,
           child: ListView(
             children: [
-              TextFormField(
+              _buildTextField(
                 controller: _memberCodeController,
-                decoration: InputDecoration(labelText: 'Member Code'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter a member code';
-                  }
-                  return null;
-                },
+                labelText: 'Member Code',
+                validatorMessage: 'Please enter a member code',
               ),
-              DropdownButtonFormField<String>(
-                decoration: InputDecoration(labelText: 'Customer Name'),
-                value: _selectedCustomer,
-                items: _customers.map((customer) {
-                  return DropdownMenuItem<String>(
-                    value: customer,
-                    child: Text(customer),
-                  );
-                }).toList(),
-                onChanged: (value) {
-                  setState(() {
-                    _selectedCustomer = value;
-                  });
-                },
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please select a customer name';
-                  }
-                  return null;
-                },
-              ),
-              TextFormField(
+              _buildDropdownField(),
+              _buildTextField(
                 controller: _branchController,
-                decoration: InputDecoration(labelText: 'Branch'),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter a branch';
-                  }
-                  return null;
-                },
+                labelText: 'Branch',
+                validatorMessage: 'Please enter a branch',
               ),
-              TextFormField(
+              _buildTextField(
                 controller: _phoneController,
-                decoration: InputDecoration(labelText: 'Phone'),
+                labelText: 'Phone',
                 keyboardType: TextInputType.phone,
-                validator: (value) {
-                  String? validateMobile(String value) {
-                    String pattern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
-                    RegExp regExp = RegExp(pattern);
-
-                    if (value.isEmpty) {
-                      return 'Please enter mobile number';
-                    } else if (!regExp.hasMatch(value)) {
-                      return 'Please enter valid mobile number';
-                    }
-
-                    return null;
-                  }
-
-                  if (value == null || value.isEmpty) {
-                    return 'Please confirm your password';
-                  }
-                  if (value != _phoneController.text) {
-                    return 'Passwords do not match';
-                  }
-                  return null;
-                },
+                validator: validatePhone,
               ),
-              TextFormField(
+              _buildTextField(
                 controller: _amountController,
-                decoration: InputDecoration(labelText: 'Amount'),
+                labelText: 'Amount',
                 keyboardType: TextInputType.number,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Please enter an amount';
-                  }
-                  return null;
-                },
+                validatorMessage: 'Please enter an amount',
               ),
               SizedBox(height: 20),
               Row(
@@ -138,11 +84,17 @@ class _DepositPageState extends State<DepositPage> {
                     onPressed: _onCancel,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.grey,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                     ),
                     child: Text('Cancel'),
                   ),
                   ElevatedButton(
                     onPressed: _onDeposit,
+                    style: ElevatedButton.styleFrom(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                    ),
                     child: Text('Deposit'),
                   ),
                 ],
@@ -152,6 +104,111 @@ class _DepositPageState extends State<DepositPage> {
         ),
       ),
     );
+  }
+
+  Widget _buildTextField({
+    required TextEditingController controller,
+    required String labelText,
+    TextInputType keyboardType = TextInputType.text,
+    String? validatorMessage,
+    String? Function(String?)? validator,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16.0),
+      child: TextFormField(
+        controller: controller,
+        decoration: InputDecoration(
+          labelText: labelText,
+          labelStyle: TextStyle(fontSize: 18, color: Colors.deepPurple),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.deepPurple, width: 1.5),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.deepPurple, width: 2),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          errorBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.red, width: 1.5),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.red, width: 2),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          filled: true,
+          fillColor: Colors.grey[100],
+        ),
+        keyboardType: keyboardType,
+        validator: validator ??
+            (value) {
+              if (value == null || value.isEmpty) {
+                return validatorMessage;
+              }
+              return null;
+            },
+      ),
+    );
+  }
+
+  Widget _buildDropdownField() {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16.0),
+      child: DropdownButtonFormField<String>(
+        decoration: InputDecoration(
+          labelText: 'Customer Name',
+          labelStyle: TextStyle(fontSize: 18, color: Colors.deepPurple),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.deepPurple, width: 1.5),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.deepPurple, width: 2),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          filled: true,
+          fillColor: Colors.grey[100],
+          contentPadding: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+        ),
+        value: _selectedCustomer,
+        isExpanded: true,
+        items: _customers.map((customer) {
+          return DropdownMenuItem<String>(
+            value: customer,
+            child: Text(
+              customer,
+              style: TextStyle(fontSize: 16),
+            ),
+          );
+        }).toList(),
+        onChanged: (value) {
+          setState(() {
+            _selectedCustomer = value;
+          });
+        },
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'Please select a customer name';
+          }
+          return null;
+        },
+        dropdownColor: Colors.white,
+        iconEnabledColor: Colors.deepPurple,
+        iconSize: 28,
+      ),
+    );
+  }
+
+  String? validatePhone(String? value) {
+    String pattern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
+    RegExp regExp = RegExp(pattern);
+
+    if (value == null || value.isEmpty) {
+      return 'Please enter mobile number';
+    } else if (!regExp.hasMatch(value)) {
+      return 'Please enter valid mobile number';
+    }
+    return null;
   }
 
   @override

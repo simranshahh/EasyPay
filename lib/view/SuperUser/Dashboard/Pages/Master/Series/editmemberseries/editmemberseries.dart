@@ -14,7 +14,7 @@ class Editmemberseries extends StatefulWidget {
 class _EditmemberseriesState extends State<Editmemberseries> {
   bool toggleValue = false;
 
-  //TODO Create Toggle Button Function
+  // TODO Create Toggle Button Function
   toggleButton() {
     setState(() {
       toggleValue = !toggleValue;

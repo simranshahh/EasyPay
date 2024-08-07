@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_final_fields
 
 import 'package:easypay/utils/color_constants.dart';
-import 'package:easypay/view/SuperUser/Dashboard/Pages/DashboardPage/dashboard.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/DashboardPage/menuslider.dart';
 import 'package:easypay/view/common/LandingPage/pages/landing%20furniture.dart';
 import 'package:easypay/view/common/LandingPage/pages/landingelectronics.dart';
 import 'package:easypay/view/common/LandingPage/pages/landingpage.dart';
@@ -64,6 +64,7 @@ class _BottomnavbarState extends State<Bottomnavbar> {
         currentIndex: _selectedIndex,
         selectedItemColor: ColorConstant.white,
         onTap: _onItemTapped,
+        // type: BottomNavigationBarType.fixed,
       ),
     );
   }

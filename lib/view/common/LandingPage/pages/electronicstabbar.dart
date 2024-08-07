@@ -29,12 +29,13 @@ class _ProductTabBarState extends State<ProductTabBar>
 
   Widget buildProductCard(String imagePath, String title, String price) {
     return Container(
+      // color: ColorConstant.white,
       margin: EdgeInsets.all(8.0),
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
             color: Colors.black26,
-            blurRadius: 8.0,
+            blurRadius: 1,
             spreadRadius: 1.0,
             offset: Offset(0, 4),
           ),
@@ -83,6 +84,7 @@ class _ProductTabBarState extends State<ProductTabBar>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorConstant.white,
       resizeToAvoidBottomInset: true,
       body: Column(
         children: [

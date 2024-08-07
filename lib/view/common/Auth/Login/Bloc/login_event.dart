@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors_in_immutables
+
 import 'package:equatable/equatable.dart';
 
 abstract class LoginEvent extends Equatable {
@@ -10,9 +12,11 @@ abstract class LoginEvent extends Equatable {
 class LoginButtonPressed extends LoginEvent {
   final String username;
   final String password;
+  final String role;
 
-  const LoginButtonPressed({required this.username, required this.password});
+  LoginButtonPressed(
+      {required this.username, required this.password, required this.role});
 
   @override
-  List<Object> get props => [username, password];
+  List<Object> get props => [username, password, role];
 }

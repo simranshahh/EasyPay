@@ -137,6 +137,9 @@ class _DashHomePageState extends State<DashHomePage> {
                           height: 5,
                         ),
                         Expanded(child: RecordTable()),
+                        SizedBox(
+                          height: displayHeight(context) * 0.02,
+                        )
                       ],
                     ),
                   )

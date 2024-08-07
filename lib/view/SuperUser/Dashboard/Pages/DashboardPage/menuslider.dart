@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, prefer_final_fields, unused_field
+// ignore_for_file: prefer_const_constructors
 
 import 'package:easypay/utils/color_constants.dart';
 import 'package:easypay/utils/size_config.dart';
@@ -38,6 +38,16 @@ class _DashboardState extends State<Dashboard> {
               fontWeight: FontWeight.w700,
             ),
           ),
+          // Custom menu icon button
+          drawerIcon: IconButton(
+            icon: Icon(
+              Icons.menu,
+              color: ColorConstant.white, // Set the color to white
+            ),
+            onPressed: () {
+              _sliderDrawerKey.currentState!.openSlider();
+            },
+          ),
         ),
         key: _sliderDrawerKey,
         sliderOpenSize: 250,
@@ -64,7 +74,6 @@ class _SliderView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: ColorConstant.land.withOpacity(0.1),
-      // padding: const EdgeInsets.only(top: 0),
       child: ListView(
         children: <Widget>[
           Column(
@@ -108,7 +117,6 @@ class _SliderView extends StatelessWidget {
           SizedBox(
             height: displayHeight(context) * 0.01,
           ),
-          // Divider(thickness: 1),
           ...[
             _buildExpansionTile(
               context,
@@ -194,6 +202,7 @@ class _SliderView extends StatelessWidget {
           fontFamily: 'Montserrat',
           fontWeight: FontWeight.w500,
           fontSize: 18,
+          // color: Colors.white,
         ),
       ),
       children: items,
@@ -202,12 +211,16 @@ class _SliderView extends StatelessWidget {
 
   Widget _buildListTile(BuildContext context, String title, String route) {
     return ListTile(
-      leading: Icon(Icons.arrow_forward_ios),
+      leading: Icon(
+        Icons.arrow_forward_ios,
+        size: 14,
+      ),
       title: Text(
         title,
         style: TextStyle(
           fontFamily: 'Montserrat',
           fontSize: 16,
+          // color: Colors.white,
         ),
       ),
       onTap: () {

@@ -53,9 +53,6 @@ class MyDataSource extends DataTableSource {
   int get selectedRowCount => 0;
 }
 
-
-
-
 class SeriesTable extends StatefulWidget {
   const SeriesTable({super.key});
 

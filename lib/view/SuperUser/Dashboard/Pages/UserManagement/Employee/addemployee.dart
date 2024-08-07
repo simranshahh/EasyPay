@@ -114,8 +114,7 @@ class _AddEmployeeDataState extends State<AddEmployeeData> {
                 Container(
                   child: TextFormField(
                     style: TextStyle(
-                    fontFamily: 'Montserrat',
-
+                      fontFamily: 'Montserrat',
                       fontSize: 24,
                       color: ColorConstant.primary,
                       fontWeight: FontWeight.w600,
@@ -140,16 +139,14 @@ class _AddEmployeeDataState extends State<AddEmployeeData> {
                       fillColor: ColorConstant.grey,
                       hintText: "Your Title",
                       hintStyle: TextStyle(
-                    fontFamily: 'Montserrat',
-
+                        fontFamily: 'Montserrat',
                         color: ColorConstant.grey,
                         fontSize: 20,
                         fontWeight: FontWeight.w400,
                       ),
                       labelText: 'Your Title',
                       labelStyle: TextStyle(
-                    fontFamily: 'Montserrat',
-
+                        fontFamily: 'Montserrat',
                         color: ColorConstant.grey,
                         fontSize: 20,
                         fontWeight: FontWeight.w400,
@@ -163,8 +160,7 @@ class _AddEmployeeDataState extends State<AddEmployeeData> {
                 Container(
                   child: TextFormField(
                     style: TextStyle(
-                    fontFamily: 'Montserrat',
-
+                      fontFamily: 'Montserrat',
                       fontSize: 24,
                       color: ColorConstant.primary,
                       fontWeight: FontWeight.w600,
@@ -189,16 +185,14 @@ class _AddEmployeeDataState extends State<AddEmployeeData> {
                       fillColor: ColorConstant.grey,
                       hintText: "Sub Title",
                       hintStyle: TextStyle(
-                    fontFamily: 'Montserrat',
-
+                        fontFamily: 'Montserrat',
                         color: ColorConstant.grey,
                         fontSize: 20,
                         fontWeight: FontWeight.w400,
                       ),
                       labelText: 'Sub Title',
                       labelStyle: TextStyle(
-                    fontFamily: 'Montserrat',
-
+                        fontFamily: 'Montserrat',
                         color: ColorConstant.grey,
                         fontSize: 20,
                         fontWeight: FontWeight.w400,

@@ -23,6 +23,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           'Basic ' + base64Encode(utf8.encode(event.username));
       final encodedPassword =
           'Basic ' + base64Encode(utf8.encode(event.password));
+      String role = 'role';
 
       final response = await http.post(
         Uri.parse('http://192.168.18.43:8000/api/login/'),
@@ -32,6 +33,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         body: jsonEncode({
           'username': encodedUsername,
           'password': encodedPassword,
+          'role': role,
         }),
       );
 

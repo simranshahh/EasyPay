@@ -2,7 +2,7 @@
 
 import 'package:easypay/components/useremitabbar.dart';
 import 'package:easypay/main.dart';
-import 'package:easypay/mmm.dart';
+import 'package:easypay/3danimationpage.dart';
 import 'package:easypay/view/SuperUser/Dashboard/Pages/Banking/deposit.dart';
 import 'package:easypay/view/SuperUser/Dashboard/Pages/Banking/transactions.dart';
 import 'package:easypay/view/SuperUser/Dashboard/Pages/Banking/withdrawl.dart';
@@ -27,7 +27,7 @@ import 'package:easypay/view/common/Auth/Fogetpassword/pages/forgetpassword.dart
 import 'package:easypay/view/common/Auth/Fogetpassword/pages/newpwset.dart';
 import 'package:easypay/view/common/Auth/Fogetpassword/pages/otp.dart';
 import 'package:easypay/view/common/Auth/Login/pages/loginn.dart';
-import 'package:easypay/view/SuperUser/Dashboard/Pages/DashboardPage/dashboard.dart';
+import 'package:easypay/view/SuperUser/Dashboard/Pages/DashboardPage/menuslider.dart';
 import 'package:easypay/view/SuperUser/Homepapge/dashhomepage.dart';
 import 'package:easypay/view/common/LandingPage/pages/landingpage.dart';
 import 'package:easypay/view/MemberProfile/AccountInfomation/Pages/accountinformation.dart';
@@ -46,7 +46,9 @@ class MyRoutes {
     // implement business logic here
     switch (settings.name) {
       case '/splash':
-        return MaterialPageRoute(builder: (context) => AnimationPage(title: '',));
+        return MaterialPageRoute(builder: (context) => SplashScreen());
+      case '/bottomnavbar':
+        return MaterialPageRoute(builder: (context) => Bottomnavbar());
       case '/login':
         return MaterialPageRoute(builder: (context) => LoginScreen());
       case '/landingpage':
@@ -65,12 +67,9 @@ class MyRoutes {
         return MaterialPageRoute(builder: (context) => DashHomePage());
       case '/memberprofilepage':
         return MaterialPageRoute(builder: (context) => MemberProfilePage());
-      // case '/memberemiplans':
-      //   return MaterialPageRoute(builder: (context) => MemberEmiPlans());
+
       case '/userprofile':
         return MaterialPageRoute(builder: (context) => UserProfile());
-      case '/bottomnavbar':
-        return MaterialPageRoute(builder: (context) => Bottomnavbar());
       case '/accountinformationpage':
         return MaterialPageRoute(
             builder: (context) => AccountInformationPage());
@@ -125,7 +124,7 @@ class MyRoutes {
       case '/withdrawpage':
         return MaterialPageRoute(builder: (context) => Withdrawl());
       case '/transactionpage':
-        return MaterialPageRoute(builder: (context) => TransactionsPage());
+        return MaterialPageRoute(builder: (context) => Transactions());
       default:
         return null;
     }

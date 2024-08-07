@@ -1,13 +1,4 @@
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// © Cosmos Software | Ali Yigit Bireroglu                                                                                                           /
-// All material used in the making of this code, project, program, application, software et cetera (the "Intellectual Property")                     /
-// belongs completely and solely to Ali Yigit Bireroglu. This includes but is not limited to the source code, the multimedia and                     /
-// other asset files. If you were granted this Intellectual Property for personal use, you are obligated to include this copyright                   /
-// text at all times.                                                                                                                                /
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//@formatter:off
-
-// ignore_for_file: prefer_final_fields, prefer_const_constructors, prefer_interpolation_to_compose_strings, prefer_const_constructors_in_immutables, library_private_types_in_public_api, no_leading_underscores_for_local_identifiers, curly_braces_in_flow_control_structures
+// ignore_for_file: prefer_final_fields, prefer_const_constructors, prefer_interpolation_to_compose_strings, prefer_const_constructors_in_immutables, library_private_types_in_public_api, no_leading_underscores_for_local_identifiers, curly_braces_in_flow_control_structures, file_names
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -66,10 +57,11 @@ class _AnimationPageState extends State<AnimationPage> {
       child: Container(
         decoration: BoxDecoration(
           color: color,
-          borderRadius: const BorderRadius.all( Radius.circular(10.0)),
+          borderRadius: const BorderRadius.all(Radius.circular(10.0)),
         ),
         child: Center(
           child: Text(
+            
             text,
             style: const TextStyle(
               color: Colors.white,

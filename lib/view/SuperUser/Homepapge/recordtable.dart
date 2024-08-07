@@ -21,6 +21,7 @@ class _RecordTableState extends State<RecordTable> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: ColorConstant.white,
       body: Stack(children: [
         Padding(
           padding: EdgeInsets.only(left: 18.0, top: 18, right: 18),
