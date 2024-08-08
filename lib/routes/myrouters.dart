@@ -29,6 +29,7 @@ import 'package:easypay/view/common/Auth/Fogetpassword/pages/otp.dart';
 import 'package:easypay/view/common/Auth/Login/pages/loginn.dart';
 import 'package:easypay/view/SuperUser/Dashboard/Pages/DashboardPage/menuslider.dart';
 import 'package:easypay/view/SuperUser/Homepapge/dashhomepage.dart';
+import 'package:easypay/view/common/LandingPage/pages/bannercarousal.dart';
 import 'package:easypay/view/common/LandingPage/pages/landingpage.dart';
 import 'package:easypay/view/MemberProfile/AccountInfomation/Pages/accountinformation.dart';
 import 'package:easypay/view/common/LandingPage/pages/bottomnavbar.dart';

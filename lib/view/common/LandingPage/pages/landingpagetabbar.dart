@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, avoid_unnecessary_containers
 
 import 'package:easypay/utils/color_constants.dart';
 import 'package:easypay/utils/size_config.dart';
@@ -12,68 +12,35 @@ class Landingpagetabbar extends StatefulWidget {
 }
 
 class _LandingpagetabbarState extends State<Landingpagetabbar> {
-  // final List<String> imageUrls = [
-  //   'assets/a.png',
-  //   'assets/b.png',
-  //   'assets/c.png',
-  //   'assets/a.png',
-  //   'assets/b.png',
-  //   'assets/c.png',
-  // ];
   final products = [
+    {'image': 'assets/f2.jpg', 'title': 'Samsung TV', 'price': 'Rs.22000'},
+    {'image': 'assets/f2.jpg', 'title': 'Samsung TV', 'price': 'Rs.22000'},
+    {'image': 'assets/f1.jpg', 'title': 'Samsung TV', 'price': 'Rs.22000'},
+    {'image': 'assets/f3.jpg', 'title': 'Samsung TV', 'price': 'Rs.22000'},
+    {'image': 'assets/f3.jpg', 'title': 'Samsung TV', 'price': 'Rs.22000'},
+    {'image': 'assets/f2.jpg', 'title': 'Samsung TV', 'price': 'Rs.22000'},
+    {'image': 'assets/f1.jpg', 'title': 'Samsung TV', 'price': 'Rs.22000'},
+    {'image': 'assets/f3.jpg', 'title': 'Samsung TV', 'price': 'Rs.22000'},
     {'image': 'assets/f3.jpg', 'title': 'Samsung TV', 'price': 'Rs.22000'},
     {'image': 'assets/f2.jpg', 'title': 'Samsung TV', 'price': 'Rs.22000'},
     {'image': 'assets/f1.jpg', 'title': 'Samsung TV', 'price': 'Rs.22000'},
     {'image': 'assets/f3.jpg', 'title': 'Samsung TV', 'price': 'Rs.22000'},
   ];
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 285.0),
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   children: [
-            //     Text(
-            //       'Categories',
-            //       style: Theme.of(context)
-            //           .textTheme
-            //           .bodyLarge!
-            //           .copyWith(fontWeight: FontWeight.bold),
-            //     ),
-            //   ],
-            // ),
-            // SizedBox(
-            //   height: 10,
-            // ),
-            // SizedBox(
-            //   height: displayHeight(context) * 0.1,
-            //   // width: displayWidth(context) * 0.3,
-            //   child: ListView.builder(
-            //       itemCount: 6,
-            //       scrollDirection: Axis.horizontal,
-            //       itemBuilder: (context, index) {
-            //         return Container(
-            //           height: displayHeight(context) * 0.08,
-            //           width: displayWidth(context) * 0.2,
-            //           decoration: BoxDecoration(
-            //               color: Colors.white,
-            //               borderRadius: BorderRadius.circular(40)),
-            //           child: Padding(
-            //             padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            //             child: Image.asset(imageUrls[index]),
-            //           ),
-            //         );
-            //       }),
-            // ),
-            SizedBox(
-              height: displayHeight(context) * 0.08,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+      padding: EdgeInsets.only(top: 355.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: displayHeight(context) * 0.15,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
@@ -83,61 +50,114 @@ class _LandingpagetabbarState extends State<Landingpagetabbar> {
                       .bodyLarge!
                       .copyWith(fontWeight: FontWeight.bold),
                 ),
+                Text(
+                  'See All',
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      fontWeight: FontWeight.bold, color: ColorConstant.land),
+                ),
               ],
             ),
-            // SizedBox(
-            //   height: displayHeight(context) * 0.01,
-            // ),
-            SizedBox(
-              height: displayHeight(context) * 0.8,
-              child: Container(
-                height: displayHeight(context) * 0.9,
-                child: GridView.builder(
-                  scrollDirection: Axis.vertical,
-                  padding: EdgeInsets.all(25),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 20.0,
-                    mainAxisSpacing: 10.0,
-                    childAspectRatio: 0.9,
+          ),
+          Expanded(
+            child: GridView.builder(
+              scrollDirection: Axis.vertical,
+              padding: EdgeInsets.all(15),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 20.0,
+                mainAxisSpacing: 5.0,
+                childAspectRatio: 0.8, // Adjust aspect ratio as needed
+              ),
+              itemCount: products.length,
+              itemBuilder: (context, index) {
+                final product = products[index];
+                return ProductCard(
+                  image: product['image']!,
+                  title: product['title']!,
+                  price: product['price']!,
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ProductCard extends StatefulWidget {
+  final String image;
+  final String title;
+  final String price;
+
+  const ProductCard({
+    Key? key,
+    required this.image,
+    required this.title,
+    required this.price,
+  }) : super(key: key);
+
+  @override
+  State<ProductCard> createState() => _ProductCardState();
+}
+
+class _ProductCardState extends State<ProductCard> {
+  bool isFavorited = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            color: ColorConstant.grey,
+            blurRadius: 2.0,
+            spreadRadius: 1.0,
+            offset: Offset(2, 2),
+          ),
+        ],
+        borderRadius: BorderRadius.circular(10),
+        color: ColorConstant.white,
+      ),
+      child: Stack(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset(
+                    widget.image,
+                    fit: BoxFit.cover,
+                    width: double.infinity,
                   ),
-                  itemCount: products.length,
-                  itemBuilder: (context, index) {
-                    final product = products[index];
-                    return Container(
-                      height: displayHeight(context) * 0.01,
-                      width: displayWidth(context) * 0.02,
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: ColorConstant.grey,
-                            blurRadius: 2.0,
-                            spreadRadius: 1.0,
-                            offset: Offset(2, 2),
-                          ),
-                        ],
-                        borderRadius: BorderRadius.circular(10),
-                        color: ColorConstant.white,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(product['image']!, fit: BoxFit.cover),
-                          SizedBox(height: 8.0),
-                          Text(
-                            '${product['title']}\n${product['price']}',
-                            style: Theme.of(context).textTheme.bodyLarge,
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
-                      ),
-                    );
-                  },
                 ),
               ),
+              SizedBox(height: 8.0),
+              Text(
+                '${widget.title}\n${widget.price}',
+                style: Theme.of(context).textTheme.bodyLarge,
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+          Positioned(
+            top: 8.0,
+            right: 8.0,
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  isFavorited = !isFavorited;
+                });
+              },
+              child: Icon(
+                isFavorited ? Icons.favorite : Icons.favorite_border,
+                color: isFavorited ? Colors.red : Colors.grey,
+              ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

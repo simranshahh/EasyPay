@@ -50,6 +50,7 @@ dependencies:
   floating_bottom_navigation_bar: ^1.5.2
   spring_button: ^2.0.0
   image_sequence_animator: ^2.0.0
+  banner_carousel: ^1.2.1
 
 dev_dependencies:
   flutter_test:

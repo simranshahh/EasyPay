@@ -61,7 +61,6 @@ class _AnimationPageState extends State<AnimationPage> {
         ),
         child: Center(
           child: Text(
-            
             text,
             style: const TextStyle(
               color: Colors.white,
@@ -90,7 +89,7 @@ class _AnimationPageState extends State<AnimationPage> {
       }
     }
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title!)),
+      // appBar: AppBar(title: Text(widget.title!)),
       body: Column(
         children: [
           Expanded(
@@ -109,13 +108,7 @@ class _AnimationPageState extends State<AnimationPage> {
                       fullPaths: _useFullPaths ? _fullPathsOffline : null,
                       isAutoPlay: true,
                       isOnline: true,
-//                      waitUntilCacheIsComplete: true,
-//                      cacheProgressIndicatorBuilder: (context, progress) {
-//                        return CircularProgressIndicator(
-//                          value: progress,
-//                          backgroundColor: color1,
-//                        );
-//                      },
+
                       color: color1,
                       onReadyToPlay: onOnlineReadyToPlay,
                       onPlaying: onOnlinePlaying,

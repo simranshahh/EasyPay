@@ -1,9 +1,11 @@
 // ignore_for_file: prefer_const_constructors, unused_import, prefer_const_literals_to_create_immutables, deprecated_member_use
 
+import 'package:banner_carousel/banner_carousel.dart';
 import 'package:easypay/utils/color_constants.dart';
 import 'package:easypay/utils/size_config.dart';
 import 'package:easypay/view/common/LandingPage/pages/bottomnavbar.dart';
 import 'package:easypay/view/common/LandingPage/pages/landingpagetabbar.dart';
+import 'package:easypay/view/common/LandingPage/pages/topcategories.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -19,121 +21,69 @@ class _LandingpageState extends State<Landingpage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorConstant.white,
-      // bottomNavigationBar: Bottomnavbar(),
       body: Stack(children: [
         Container(
           height: displayHeight(context) * 0.1,
           width: displayWidth(context),
           decoration: BoxDecoration(
-              color: ColorConstant.land,
-              borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20))),
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 90),
-          child: Container(
-            color: ColorConstant.white,
-            child: SearchBar(
-              backgroundColor: MaterialStateProperty.resolveWith<Color>(
-                (Set<MaterialState> states) {
-                  if (states.contains(MaterialState.focused)) {
-                    return Colors.grey[200]!;
-                  }
-                  return Colors.white;
-                },
-              ),
-              hintText: 'Seach for items',
-              hintStyle: MaterialStateProperty.all<TextStyle>(
-                TextStyle(
-                  color: Colors.grey,
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.normal,
-                ),
-              ),
-              leading: Icon(
-                Icons.search,
-                color: ColorConstant.grey,
-              ),
-            ),
+            color: ColorConstant.land,
           ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 22.0),
+          padding: EdgeInsets.symmetric(vertical: 30.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text('EASYPAY',
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineMedium!
-                      .copyWith(color: ColorConstant.white)),
+                  style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                      color: ColorConstant.white, fontWeight: FontWeight.bold)),
             ],
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(top: 130.0),
+          padding: EdgeInsets.only(top: 80.0),
           child: SizedBox(
             height: 190,
             width: displayWidth(context),
-            child: ListView(children: [
-              CarouselSlider(
-                items: [
-                  _buildCarouselItem(
-                    imagePath: "assets/banner.jpg",
-                  ),
-                  _buildCarouselItem(
-                    imagePath: "assets/baner.jpg",
-                  ),
-                  _buildCarouselItem(
-                    imagePath: "assets/banner1.jpg",
-                  ),
-                ],
-                options: CarouselOptions(
-                  enlargeCenterPage: true,
-                  autoPlay: true,
-                  aspectRatio: 16 / 9,
-                  autoPlayCurve: Curves.easeInOut,
-                  enableInfiniteScroll: true,
-                  autoPlayAnimationDuration: Duration(seconds: 1),
-                  viewportFraction: 0.8,
-                  initialPage: 0,
-                  scrollPhysics: BouncingScrollPhysics(),
-                  pauseAutoPlayOnTouch: true,
-                  autoPlayInterval: Duration(seconds: 3),
-                ),
-              ),
-            ]),
+            child: BannerCarousel(
+              banners: BannerImages.listBanners,
+              onTap: (id) => print(id),
+            ),
           ),
         ),
+        Padding(
+          padding: const EdgeInsets.only(top: 280.0),
+          child: Container(
+            height: 40,
+            width: displayWidth(context),
+            color: Colors.grey.withOpacity(0.2),
+            child: Center(
+                child: Text(
+              'Top Categories',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            )),
+          ),
+        ),
+        Expanded(child: TopCategories()),
         Expanded(child: Landingpagetabbar()),
       ]),
     );
   }
 }
 
-Widget _buildCarouselItem({
-  required String imagePath,
-}) {
-  return Container(
-    margin: EdgeInsets.all(8.0),
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(15.0),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black26,
-          blurRadius: 10.0,
-          offset: Offset(0, 5),
-        ),
-      ],
-      image: DecorationImage(
-        image: AssetImage(imagePath),
-        fit: BoxFit.cover,
-        colorFilter: ColorFilter.mode(
-          Colors.black.withOpacity(0.3),
-          BlendMode.darken,
-        ),
-      ),
-    ),
-  );
+class BannerImages {
+  static const String banner1 =
+      "https://img.freepik.com/premium-vector/furniture-sale-cover-page-design-web-banner-furniture-product-promotion-template_612834-316.jpg";
+  static const String banner2 =
+      "https://img.lovepik.com/desgin_photo/45008/4299_detail.jpg!odetail650";
+  static const String banner3 = "https://wallpaperaccess.com/full/19921.jpg";
+  static const String banner4 =
+      "https://images.pexels.com/photos/2635817/pexels-photo-2635817.jpeg?auto=compress&crop=focalpoint&cs=tinysrgb&fit=crop&fp-y=0.6&h=500&sharp=20&w=1400";
+
+  static List<BannerModel> listBanners = [
+    BannerModel(imagePath: banner1, id: "1"),
+    BannerModel(imagePath: banner2, id: "2"),
+    BannerModel(imagePath: banner3, id: "3"),
+    BannerModel(imagePath: banner4, id: "4"),
+  ];
 }
