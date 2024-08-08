@@ -152,8 +152,7 @@ class _EditmemberseriesState extends State<Editmemberseries> {
                           fillColor: ColorConstant.grey,
                           // hintText: "Your Title",
                           hintStyle: TextStyle(
-                    fontFamily: 'Montserrat',
-
+                            fontFamily: 'Montserrat',
                             color: ColorConstant.grey,
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
@@ -178,9 +177,8 @@ class _EditmemberseriesState extends State<Editmemberseries> {
                     Text(
                       'Include Branch code',
                       style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontFamily: 'Montserrat',
-
-                      ),
+                            fontFamily: 'Montserrat',
+                          ),
                     ),
                     SizedBox(
                       width: displayWidth(context) * 0.23,

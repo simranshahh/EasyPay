@@ -2,21 +2,6 @@
 
 import 'package:flutter/material.dart';
 
-const kPrimaryColor = Color(0xFFFF7643);
-const kPrimaryLightColor = Color(0xFFFFECDF);
-const kPrimaryGradientColor = LinearGradient(
-  begin: Alignment.topLeft,
-  end: Alignment.bottomRight,
-  colors: [Color(0xFFFFA53E), Color(0xFFFF7643)],
-);
-const kSecondaryColor = Color(0xFF979797);
-const kTextColor = Color(0xFF5D5B5B);
-const oTextColor = Color(0xFF3B3434);
-const kdividercolor = Color.fromARGB(255, 209, 209, 209);
-const ksimmeracolor = Color.fromARGB(255, 226, 226, 226);
-
-const kAnimationDuration = Duration(milliseconds: 200);
-
 final headingStyle = TextStyle(
   fontWeight: FontWeight.bold,
   color: Colors.black,
@@ -41,20 +26,11 @@ const String kMatchPassError = "Passwords don't match";
 const String kNamelNullError = "Please Enter your name";
 const String kPhoneNumberNullError = "Please Enter your phone number";
 const String kAddressNullError = "Please Enter your address";
-
-final otpInputDecoration = InputDecoration(
-  contentPadding: EdgeInsets.symmetric(vertical: 15),
-  border: outlineInputBorder(),
-  focusedBorder: outlineInputBorder(),
-  enabledBorder: outlineInputBorder(),
-);
-
-OutlineInputBorder outlineInputBorder() {
-  return OutlineInputBorder(
-    borderRadius: BorderRadius.circular((15)),
-    borderSide: BorderSide(color: kTextColor),
-  );
-}
+const String addtocart = "Added to Favorites";
+const String removefromcart = "Removed from Favorites";
+const String addedtocart = "This item has been added to your favorites.";
+const String removedfromcart =
+    "This item has been removed from your favorites.";
 
 void snackbar(
   BuildContext context,

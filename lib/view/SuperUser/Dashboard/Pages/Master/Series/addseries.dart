@@ -43,7 +43,6 @@ class _AddSeriesDataState extends State<AddSeriesData> {
           padding: const EdgeInsets.all(10.0),
           child: SingleChildScrollView(
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Stack(children: [
@@ -67,9 +66,6 @@ class _AddSeriesDataState extends State<AddSeriesData> {
                             fontSize: 20,
                             fontFamily: 'Montserrat',
                           ),
-                          // style: Theme.of(context).textTheme.displayLarge!.copyWith(
-                          //     color: ColorConstant.black,
-                          //     fontWeight: FontWeight.w500),
                         ),
                         SizedBox(
                           height: displayHeight(context) * 0.045,
@@ -85,7 +81,6 @@ class _AddSeriesDataState extends State<AddSeriesData> {
                                     fontFamily: 'Montserrat',
                                   ),
                             ),
-
                             SizedBox(
                               width: displayWidth(context) * 0.3,
                             ),
@@ -125,16 +120,9 @@ class _AddSeriesDataState extends State<AddSeriesData> {
                                     fontSize: 12,
                                     fontWeight: FontWeight.w400,
                                   ),
-                                  // labelText: 'Your Title',
-                                  // labelStyle: TextStyle(
-                                  //   color: ColorConstant.grey,
-                                  //   fontSize: 12,
-                                  //   fontWeight: FontWeight.w400,
-                                  // ),
                                 ),
                               ),
                             ),
-                            // TextFormField()
                           ],
                         ),
                         SizedBox(
@@ -151,7 +139,6 @@ class _AddSeriesDataState extends State<AddSeriesData> {
                                     fontFamily: 'Montserrat',
                                   ),
                             ),
-
                             SizedBox(
                               width: displayWidth(context) * 0.3,
                             ),
@@ -190,16 +177,9 @@ class _AddSeriesDataState extends State<AddSeriesData> {
                                     fontSize: 12,
                                     fontWeight: FontWeight.w400,
                                   ),
-                                  // labelText: 'Your Title',
-                                  // labelStyle: TextStyle(
-                                  //   color: ColorConstant.grey,
-                                  //   fontSize: 12,
-                                  //   fontWeight: FontWeight.w400,
-                                  // ),
                                 ),
                               ),
                             ),
-                            // TextFormField()
                           ],
                         ),
                         SizedBox(
@@ -250,25 +230,18 @@ class _AddSeriesDataState extends State<AddSeriesData> {
                                               Animation<double> animation) {
                                             return RotationTransition(
                                                 child: child, turns: animation);
-                                            // for scale transition
-                                            //return ScaleTransition(child: child, scale: animation);
                                           },
-                                          // what to toggle is defined below
                                           child: toggleValue
                                               ? Icon(
                                                   Icons.check_circle_outline,
                                                   color: Colors.green,
                                                   size: 25.0,
-                                                  // key used to tell the switcher that
-                                                  // these are two separate widget(Icon())
                                                   key: UniqueKey(),
                                                 )
                                               : Icon(
                                                   Icons.remove_circle_outline,
                                                   color: Colors.red,
                                                   size: 25.0,
-                                                  // key used to tell the switcher that
-                                                  // these are two separate widget(Icon())
                                                   key: UniqueKey(),
                                                 ),
                                         ),

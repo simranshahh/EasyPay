@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, unused_import, prefer_const_literals_to_create_immutables, deprecated_member_use
+// ignore_for_file: prefer_const_constructors, unused_import, prefer_const_literals_to_create_immutables, deprecated_member_use, avoid_print
 
 import 'package:banner_carousel/banner_carousel.dart';
 import 'package:easypay/utils/color_constants.dart';
@@ -32,16 +32,31 @@ class _LandingpageState extends State<Landingpage> {
         Padding(
           padding: EdgeInsets.symmetric(vertical: 30.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text('EASYPAY',
+              Text('    EASYPAY',
                   style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                       color: ColorConstant.white, fontWeight: FontWeight.bold)),
+              Padding(
+                padding: const EdgeInsets.only(left: 110.0),
+                child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.search,
+                      color: ColorConstant.white,
+                    )),
+              ),
+              IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.notifications,
+                    color: ColorConstant.white,
+                  )),
             ],
           ),
         ),
         Padding(
-          padding: EdgeInsets.only(top: 80.0),
+          padding: EdgeInsets.only(top: 90.0),
           child: SizedBox(
             height: 190,
             width: displayWidth(context),
@@ -52,7 +67,7 @@ class _LandingpageState extends State<Landingpage> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 280.0),
+          padding: const EdgeInsets.only(top: 290),
           child: Container(
             height: 40,
             width: displayWidth(context),
@@ -72,8 +87,7 @@ class _LandingpageState extends State<Landingpage> {
 }
 
 class BannerImages {
-  static const String banner1 =
-      "https://img.freepik.com/premium-vector/furniture-sale-cover-page-design-web-banner-furniture-product-promotion-template_612834-316.jpg";
+  static const String banner1 = "assets/baner.jpg";
   static const String banner2 =
       "https://img.lovepik.com/desgin_photo/45008/4299_detail.jpg!odetail650";
   static const String banner3 = "https://wallpaperaccess.com/full/19921.jpg";

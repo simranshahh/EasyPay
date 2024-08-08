@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
 
 import 'package:easypay/utils/color_constants.dart';
 import 'package:easypay/utils/size_config.dart';
@@ -13,18 +13,18 @@ class TopCategories extends StatefulWidget {
 
 class _TopCategoriesState extends State<TopCategories> {
   final products = [
-    {'image': 'assets/f3.jpg', 'title': 'Sofa'},
+    {'image': 'assets/f4.png', 'title': 'Sofa'},
+    {'image': 'assets/f5.png', 'title': 'Bed'},
+    {'image': 'assets/table.png', 'title': 'Chair'},
+    {'image': 'assets/f4.png', 'title': 'Sofa'},
+    {'image': 'assets/f5.png', 'title': 'Sofa'},
     {'image': 'assets/f3.jpg', 'title': 'Bed'},
-    {'image': 'assets/f1.jpg', 'title': 'Chair'},
-    {'image': 'assets/f3.jpg', 'title': 'Sofa'},
-    {'image': 'assets/f3.jpg', 'title': 'Sofa'},
+    {'image': 'assets/f4.png', 'title': 'Sofa'},
+    {'image': 'assets/f5.png', 'title': 'Bed'},
+    {'image': 'assets/table.png', 'title': 'Chair'},
+    {'image': 'assets/f4.png', 'title': 'Sofa'},
+    {'image': 'assets/f5.png', 'title': 'Sofa'},
     {'image': 'assets/f3.jpg', 'title': 'Bed'},
-    {'image': 'assets/f1.jpg', 'title': 'Chair'},
-    {'image': 'assets/f3.jpg', 'title': 'Sofa'},
-    {'image': 'assets/f3.jpg', 'title': 'Sofa'},
-    {'image': 'assets/f3.jpg', 'title': 'Bed'},
-    {'image': 'assets/f1.jpg', 'title': 'Chair'},
-    {'image': 'assets/f3.jpg', 'title': 'Sofa'},
   ];
 
   @override
@@ -59,6 +59,13 @@ class _TopCategoriesState extends State<TopCategories> {
                         Container(
                           height: displayHeight(context) * 0.1,
                           decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                  blurRadius: 1,
+                                  spreadRadius: 0.1,
+                                  blurStyle: BlurStyle.solid,
+                                  color: ColorConstant.grey.withOpacity(0.1))
+                            ],
                             border:
                                 Border.all(color: Colors.grey.withOpacity(0.2)),
                             borderRadius: BorderRadius.circular(10),
@@ -68,9 +75,9 @@ class _TopCategoriesState extends State<TopCategories> {
                             borderRadius: BorderRadius.circular(10),
                             child: Image.asset(
                               product['image']!,
-                              fit: BoxFit.cover, // Change BoxFit to cover
+                              fit: BoxFit.fitHeight,
                               width: double.infinity,
-                              height: double.infinity,
+                              height: 20,
                             ),
                           ),
                         ),

@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, sized_box_for_whitespace, avoid_unnecessary_containers
 
 import 'package:easypay/utils/color_constants.dart';
+import 'package:easypay/utils/form_text_constants.dart';
 import 'package:easypay/utils/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -26,6 +27,7 @@ class _LandingpagetabbarState extends State<Landingpagetabbar> {
     {'image': 'assets/f1.jpg', 'title': 'Samsung TV', 'price': 'Rs.22000'},
     {'image': 'assets/f3.jpg', 'title': 'Samsung TV', 'price': 'Rs.22000'},
   ];
+  bool isFavorited = false;
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +68,7 @@ class _LandingpagetabbarState extends State<Landingpagetabbar> {
                 crossAxisCount: 2,
                 crossAxisSpacing: 20.0,
                 mainAxisSpacing: 5.0,
-                childAspectRatio: 0.8, // Adjust aspect ratio as needed
+                childAspectRatio: 0.8,
               ),
               itemCount: products.length,
               itemBuilder: (context, index) {
@@ -149,6 +151,7 @@ class _ProductCardState extends State<ProductCard> {
               onTap: () {
                 setState(() {
                   isFavorited = !isFavorited;
+                  _showDialog();
                 });
               },
               child: Icon(
@@ -159,6 +162,26 @@ class _ProductCardState extends State<ProductCard> {
           ),
         ],
       ),
+    );
+  }
+
+  void _showDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(isFavorited ? addtocart : removefromcart),
+          content: Text(isFavorited ? addedtocart : removedfromcart),
+          actions: <Widget>[
+            TextButton(
+              child: Text('OK'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 }
