@@ -14,7 +14,7 @@ class SetNewPasswordPage extends StatefulWidget {
 class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
   String? validateMobile(String value) {
     String pattern = r'(^(?:[+0]9)?[0-9]{10,12}$)';
-    RegExp regExp =  RegExp(pattern);
+    RegExp regExp = RegExp(pattern);
 
     if (value.length == 0) {
       return 'Please enter mobile number';
@@ -45,11 +45,17 @@ class _SetNewPasswordPageState extends State<SetNewPasswordPage> {
 
   void _submit() {
     if (_formKey.currentState!.validate()) {
-      // Perform password change action
       ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Password changed successfully!')));
       Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (BuildContext context) => LoginScreen()));
+    }
+  }
+
+  void _changepassword() {
+    if (_formKey.currentState!.validate()) {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('The profile has been updated careffully ')));
     }
   }
 

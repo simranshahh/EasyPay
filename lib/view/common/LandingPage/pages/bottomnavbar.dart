@@ -38,6 +38,7 @@ class _BottomnavbarState extends State<Bottomnavbar> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 2,
         backgroundColor: ColorConstant.land,
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(

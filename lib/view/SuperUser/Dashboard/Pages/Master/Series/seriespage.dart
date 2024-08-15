@@ -4,6 +4,7 @@ import 'package:easypay/utils/color_constants.dart';
 import 'package:easypay/utils/size_config.dart';
 import 'package:easypay/view/SuperUser/Dashboard/Pages/Master/Series/addseries.dart';
 import 'package:easypay/view/SuperUser/Dashboard/Pages/Master/Series/seriestable.dart';
+import 'package:easypay/view/common/LandingPage/pages/bottomnavbar.dart';
 import 'package:flutter/material.dart';
 
 class SeriesPage extends StatefulWidget {
@@ -51,8 +52,6 @@ class _SeriesPageState extends State<SeriesPage>
             SafeArea(
               child: SingleChildScrollView(
                 child: Column(
-                  // mainAxisAlignment: MainAxisAlignment.start,
-                  // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(
                       height: setHeight(20, context),
@@ -63,7 +62,6 @@ class _SeriesPageState extends State<SeriesPage>
                       ),
                       child: Row(
                         children: [
-                          // Image.asset('assets/google.png'),
                           SizedBox(
                             width: 4,
                           ),
@@ -73,10 +71,10 @@ class _SeriesPageState extends State<SeriesPage>
                                   .textTheme
                                   .headlineSmall!
                                   .copyWith(
-                                      color: ColorConstant.white,
-                                      fontWeight: FontWeight.w500,
-                    fontFamily: 'Montserrat',
-                                      )),
+                                    color: ColorConstant.white,
+                                    fontWeight: FontWeight.w500,
+                                    fontFamily: 'Montserrat',
+                                  )),
                           Spacer(),
                           GestureDetector(
                             onTap: () {
@@ -103,9 +101,7 @@ class _SeriesPageState extends State<SeriesPage>
                                 color: Color(0xff5889c7),
                               ),
                             ),
-                            onTap: () {
-                              // Navigator.pushNamed(context, '/notificationpage');
-                            },
+                            onTap: () {},
                           ),
                         ],
                       ),
@@ -191,15 +187,8 @@ class _SeriesPageState extends State<SeriesPage>
                     SizedBox(
                       height: setHeight(20, context),
                     ),
-                    // Image.asset('assets/mail.png'),
                     SizedBox(
-                      height: setHeight(20, context),
-                    ),
-                    // DataTableExample(),
-
-                    SizedBox(
-                      height: displayHeight(
-                          context), // Specify a height for the TabBarView
+                      height: displayHeight(context),
                       child: TabBarView(
                         controller: _tabController,
                         children: [

@@ -1,9 +1,11 @@
+// ignore_for_file: prefer_final_fields
+
 import 'package:flutter/material.dart';
 
 /// Flutter code sample for [PaginatedDataTable].
 
 class MyDataSource extends DataTableSource {
-  static const List<int> _displayIndexToRawIndex = <int>[0, 3, 4, 5, 6];
+  static List<int> _displayIndexToRawIndex = <int>[0, 3, 4, 5, 6];
 
   late List<List<Comparable<Object>>> sortedData;
   void setData(List<List<Comparable<Object>>> rawData, int sortColumn,
@@ -11,6 +13,7 @@ class MyDataSource extends DataTableSource {
     sortedData = rawData.toList()
       ..sort((List<Comparable<Object>> a, List<Comparable<Object>> b) {
         final Comparable<Object> cellA = a[_displayIndexToRawIndex[sortColumn]];
+        // final Comparable<Object> cellA = a[_displayIndexToRawIndex[sortColumn]];
         final Comparable<Object> cellB = b[_displayIndexToRawIndex[sortColumn]];
         return cellA.compareTo(cellB) * (sortAscending ? 1 : -1);
       });
@@ -34,16 +37,15 @@ class MyDataSource extends DataTableSource {
   @override
   DataRow? getRow(int index) {
     return DataRow.byIndex(
-      index: sortedData[index][0] as int,
-      cells: <DataCell>[
-        cellFor(
-            'S${sortedData[index][1]}E${sortedData[index][2].toString().padLeft(2, '0')}'),
-        cellFor(sortedData[index][3]),
-        cellFor(sortedData[index][4]),
-        cellFor(sortedData[index][5]),
-        cellFor(sortedData[index][6]),
-      ],
-    );
+        index: sortedData[index][1] as int,
+        cells: <DataCell>[
+          cellFor(
+              'S${sortedData[index][1]}E${sortedData[index][2].toString().padLeft(2, '0')}'),
+          cellFor(sortedData[index][3]),
+          cellFor(sortedData[index][4]),
+          cellFor(sortedData[index][5]),
+          cellFor(sortedData[index][6]),
+        ]);
   }
 
   @override
@@ -96,10 +98,7 @@ class _SeriesTableState extends State<SeriesTable> {
           label: const Text('Writer(s)'),
           onSort: _sort,
         ),
-        DataColumn(
-          label: const Text('Air Date'),
-          onSort: _sort,
-        ),
+        DataColumn(label: const Text('Air Date'), onSort: _sort),
       ],
       source: dataSource,
     );

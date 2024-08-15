@@ -46,9 +46,6 @@ class _EditmemberseriesState extends State<Editmemberseries> {
                     fontSize: 20,
                     fontFamily: 'Montserrat',
                   ),
-                  // style: Theme.of(context).textTheme.displayLarge!.copyWith(
-                  //     color: ColorConstant.black,
-                  //     fontWeight: FontWeight.w500),
                 ),
                 SizedBox(
                   height: displayHeight(context) * 0.045,
@@ -59,7 +56,6 @@ class _EditmemberseriesState extends State<Editmemberseries> {
                         style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                               fontFamily: 'Montserrat',
                             )),
-
                     SizedBox(
                       width: displayWidth(context) * 0.3,
                     ),
@@ -90,22 +86,14 @@ class _EditmemberseriesState extends State<Editmemberseries> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           fillColor: ColorConstant.grey,
-                          // hintText: "Your Title",
                           hintStyle: TextStyle(
                             color: ColorConstant.grey,
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                           ),
-                          // labelText: 'Your Title',
-                          // labelStyle: TextStyle(
-                          //   color: ColorConstant.grey,
-                          //   fontSize: 12,
-                          //   fontWeight: FontWeight.w400,
-                          // ),
                         ),
                       ),
                     ),
-                    // TextFormField()
                   ],
                 ),
                 SizedBox(
@@ -119,7 +107,6 @@ class _EditmemberseriesState extends State<Editmemberseries> {
                             fontFamily: 'Montserrat',
                           ),
                     ),
-
                     SizedBox(
                       width: displayWidth(context) * 0.3,
                     ),
@@ -150,23 +137,15 @@ class _EditmemberseriesState extends State<Editmemberseries> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           fillColor: ColorConstant.grey,
-                          // hintText: "Your Title",
                           hintStyle: TextStyle(
                             fontFamily: 'Montserrat',
                             color: ColorConstant.grey,
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                           ),
-                          // labelText: 'Your Title',
-                          // labelStyle: TextStyle(
-                          //   color: ColorConstant.grey,
-                          //   fontSize: 12,
-                          //   fontWeight: FontWeight.w400,
-                          // ),
                         ),
                       ),
                     ),
-                    // TextFormField()
                   ],
                 ),
                 SizedBox(
@@ -187,7 +166,6 @@ class _EditmemberseriesState extends State<Editmemberseries> {
                       height: 35,
                       width: 80,
                       child: AnimatedContainer(
-                        // ignore: prefer_const_constructors
                         duration: Duration(milliseconds: 500),
                         height: 35.0,
                         width: 80.0,
@@ -214,25 +192,18 @@ class _EditmemberseriesState extends State<Editmemberseries> {
                                       Animation<double> animation) {
                                     return RotationTransition(
                                         child: child, turns: animation);
-                                    // for scale transition
-                                    //return ScaleTransition(child: child, scale: animation);
                                   },
-                                  // what to toggle is defined below
                                   child: toggleValue
                                       ? Icon(
                                           Icons.check_circle_outline,
                                           color: Colors.green,
                                           size: 25.0,
-                                          // key used to tell the switcher that
-                                          // these are two separate widget(Icon())
                                           key: UniqueKey(),
                                         )
                                       : Icon(
                                           Icons.remove_circle_outline,
                                           color: Colors.red,
                                           size: 25.0,
-                                          // key used to tell the switcher that
-                                          // these are two separate widget(Icon())
                                           key: UniqueKey(),
                                         ),
                                 ),

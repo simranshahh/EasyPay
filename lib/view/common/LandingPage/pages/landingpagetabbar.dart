@@ -63,12 +63,12 @@ class _LandingpagetabbarState extends State<Landingpagetabbar> {
           Expanded(
             child: GridView.builder(
               scrollDirection: Axis.vertical,
-              padding: EdgeInsets.all(15),
+              padding: EdgeInsets.symmetric(horizontal: 20),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                crossAxisSpacing: 20.0,
-                mainAxisSpacing: 5.0,
-                childAspectRatio: 0.8,
+                crossAxisSpacing: 30.0,
+                mainAxisSpacing: 10.0,
+                childAspectRatio: 0.7,
               ),
               itemCount: products.length,
               itemBuilder: (context, index) {
@@ -184,10 +184,4 @@ class _ProductCardState extends State<ProductCard> {
       },
     );
   }
-}
-
-class ProductCategories {
-  Image image;
-
-  ProductCategories({required this.image});
 }

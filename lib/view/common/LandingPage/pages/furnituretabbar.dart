@@ -159,7 +159,7 @@ class _FurnitureTabBarState extends State<FurnitureTabBar>
 
   Widget _buildTabContent(List<Map<String, String>> products) {
     return GridView.builder(
-      padding: const EdgeInsets.all(8.0),
+      padding:  EdgeInsets.all(8.0),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         crossAxisSpacing: 8.0,

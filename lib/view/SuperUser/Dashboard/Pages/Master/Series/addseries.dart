@@ -113,7 +113,6 @@ class _AddSeriesDataState extends State<AddSeriesData> {
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   fillColor: ColorConstant.grey,
-                                  // hintText: "Your Title",
                                   hintStyle: TextStyle(
                                     fontFamily: 'Montserrat',
                                     color: ColorConstant.grey,
@@ -170,7 +169,6 @@ class _AddSeriesDataState extends State<AddSeriesData> {
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
                                   fillColor: ColorConstant.grey,
-                                  // hintText: "Your Title",
                                   hintStyle: TextStyle(
                                     color: ColorConstant.grey,
                                     fontFamily: 'Montserrat',
@@ -215,7 +213,6 @@ class _AddSeriesDataState extends State<AddSeriesData> {
                                 ),
                                 child: Stack(
                                   children: [
-                                    //TODO Rotation_Animation
                                     AnimatedPositioned(
                                       duration: Duration(milliseconds: 500),
                                       curve: Curves.easeIn,

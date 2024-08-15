@@ -15,11 +15,4 @@ class LoginInput {
         role: json["role"],
       );
 
-  // Map<String, dynamic> toJson() => {
-  //       "loginInput": {
-  //         "contact": contact,
-  //         "password": password,
-
-  //       }
-  //     };
 }
